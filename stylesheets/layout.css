@@ -999,16 +999,90 @@ p {
 
 /* КАРТА */
 
+/* КАРТА */
+
 .process-map {
   display: grid;
   grid-template-columns: 22vw 1fr;
   gap: 1.5vw;
 
+  margin-top: 20vw;
+  margin-bottom: 10vw;
+}
+
+.process-sidebar {
   position: sticky;
   top: 7vw;
 
-  height: calc(100vh - 7vw);
-  margin-top: 6vw;
+  height: 42vw;
+}
+
+.process-card {
+  position: absolute;
+  inset: 0;
+
+  padding: 2vw;
+
+  background: #dfff4f;
+  border-radius: 1.8vw;
+
+  opacity: 0;
+  transform: translateY(2vw);
+  transition: 0.45s ease;
+}
+
+.process-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process-card h2 {
+  margin: 0;
+
+  color: #6748db;
+  font-size: 2.6vw;
+  font-weight: 500;
+}
+
+.process-card p {
+  max-width: 15vw;
+  margin-top: 1vw;
+
+  color: #6748db;
+}
+
+/* ПРАВАЯ ЧАСТЬ */
+
+.process-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+
+  max-height: 42vw;
+  overflow-y: auto;
+  padding-right: 0.5vw;
+
+  scrollbar-width: none;
+}
+
+.process-content::-webkit-scrollbar {
+  display: none;
+}
+
+.process-step {
+  display: grid;
+  gap: 0.8vw;
+
+  flex-shrink: 0;
+}
+
+.process-step img {
+  display: block;
+
+  object-fit: cover;
+
+  border: 0.05vw solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.8vw;
 }
 
 .process-sidebar {
@@ -1083,7 +1157,36 @@ p {
   border: 0.05vw solid rgba(255, 255, 255, 0.25);
   border-radius: 0.8vw;
 }
+.process-map {
+  display: grid;
+  grid-template-columns: 22vw 1fr;
+  gap: 1.5vw;
+  align-items: start;
 
+  margin-top: 5vw;
+  margin-bottom: 10vw;
+}
+
+.process-sidebar {
+  position: sticky;
+  top: 7vw;
+
+  height: 42vw;
+  align-self: start;
+}
+
+.process-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+
+  height: 42vw;
+  overflow-y: auto;
+  padding-right: 0.5vw;
+
+  scrollbar-width: none;
+  align-self: start;
+}
 /* ЭСКИЗЫ */
 
 .plan-step {
@@ -1199,9 +1302,7 @@ p {
   border: none;
   border-radius: 1vw;
 }
-.process-map {
-  margin-bottom: 25vw;
-}
+
 /* PROGRAM */
 
 .program-screen {
@@ -1418,4 +1519,107 @@ p {
 
   color: #b9b9b9;
   font-size: 0.9vw;
+}
+
+/* попап */
+.ticket-modal {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(0.5vw);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s ease;
+
+  z-index: 1000;
+}
+
+.ticket-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ticket-modal-content {
+  position: relative;
+
+  width: 34vw;
+  padding: 3vw;
+
+  background: #050505;
+  border: 0.1vw solid #6748db;
+  border-radius: 2vw;
+  box-shadow: 0 0 4vw rgba(103, 72, 219, 0.4);
+}
+
+.ticket-modal-content h2 {
+  margin-bottom: 2vw;
+
+  color: #dfff4f;
+  font-size: 2.4vw;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.ticket-form input,
+.ticket-form select {
+  padding: 1.2vw;
+
+  background: transparent;
+  border: 0.05vw solid rgba(255, 255, 255, 0.2);
+  border-radius: 1vw;
+
+  color: white;
+  font-size: 1vw;
+}
+
+.ticket-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ticket-form select option {
+  background: #050505;
+}
+
+.ticket-form-btn {
+  margin-top: 1vw;
+  padding: 1.2vw;
+
+  background: #6748db;
+  border: none;
+  border-radius: 1vw;
+
+  color: white;
+  font-size: 1vw;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ticket-form-btn:hover {
+  background: #7d63e7;
+}
+
+.ticket-modal-close {
+  position: absolute;
+  top: 1.5vw;
+  right: 1.5vw;
+
+  background: none;
+  border: none;
+
+  color: #dfff4f;
+  font-size: 1.5vw;
+
+  cursor: pointer;
 }

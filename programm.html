@@ -23,7 +23,7 @@
         <a href="CHIK-KIDS.html">CHIK KIDS</a>
         <a href="CHIK PLATFORM.html">CHIK PLATFORM</a>
       </nav>
-      <a href="404.html" class="ticket-btn">Купить билет</a>
+      <a class="ticket-btn open-ticket-modal"> Купить билет </a>
     </header>
     <section class="program-screen">
       <h1 class="program-title">Программа</h1>
@@ -32,48 +32,42 @@
         <article class="program-card active">
           <img src="./images/program-1.png" alt="" />
           <div class="program-info">
-            <p>Название мероприятия</p>
-            <span>18:00</span>
+            <p>Ночь свиста<br />00:00</p>
           </div>
         </article>
 
         <article class="program-card">
           <img src="./images/program-2.png" alt="" />
           <div class="program-info">
-            <p>Открытие сцены</p>
-            <span>19:00</span>
+            <p>Грязный звук<br />19:00</p>
           </div>
         </article>
 
         <article class="program-card">
           <img src="./images/program-3.png" alt="" />
           <div class="program-info">
-            <p>Выступление артистов</p>
-            <span>20:00</span>
+            <p>Птичий батл<br />22:00</p>
           </div>
         </article>
 
         <article class="program-card">
           <img src="./images/program-4.png" alt="" />
           <div class="program-info">
-            <p>DJ-сет</p>
-            <span>21:00</span>
+            <p>Мега птичий концерт <br />19:00</p>
           </div>
         </article>
 
         <article class="program-card">
           <img src="./images/program-5.png" alt="" />
           <div class="program-info">
-            <p>Интерактивная зона</p>
-            <span>22:00</span>
+            <p>Фестиваль полетов<br />19:00</p>
           </div>
         </article>
 
         <article class="program-card">
           <img src="./images/program-6.png" alt="" />
           <div class="program-info">
-            <p>Финальное шоу</p>
-            <span>23:00</span>
+            <p>Утренний концерт<br />06:00</p>
           </div>
         </article>
       </div>
@@ -101,7 +95,7 @@
             становятся частью большой музыкальной стаи.
           </p>
 
-          <a href="#" class="footer-button">Купить билет</a>
+          <a class="footer-button open-ticket-modal"> Купить билет </a>
         </div>
 
         <div class="footer-links">
@@ -131,5 +125,29 @@
 
       <div class="footer-bottom">Chik Party. Все права расправлены.</div>
     </footer>
+    <div class="ticket-modal">
+      <div class="ticket-modal-content">
+        <button class="ticket-modal-close">✕</button>
+
+        <h2>Купить билет</h2>
+
+        <form class="ticket-form">
+          <input type="text" placeholder="Ваше имя" required />
+
+          <input type="email" placeholder="E-mail" required />
+
+          <input type="tel" placeholder="Телефон" required />
+
+          <select required>
+            <option value="">Выберите билет</option>
+            <option>Стандарт</option>
+            <option>ВИПчик</option>
+            <option>Бэкстейж</option>
+          </select>
+
+          <button type="submit" class="ticket-form-btn">Отправить</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

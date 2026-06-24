@@ -23,7 +23,7 @@
         <a href="CHIK-KIDS.html">CHIK KIDS</a>
         <a href="CHIK PLATFORM.html">CHIK PLATFORM</a>
       </nav>
-      <a href="404.html" class="ticket-btn">Купить билет</a>
+      <a class="ticket-btn open-ticket-modal"> Купить билет </a>
     </header>
     <section class="line-up-section">
       <h1>Лайн-ап</h1>
@@ -31,7 +31,7 @@
         <article class="artist-card">
           <img
             class="artist-image"
-            src="../Chik-4/images/line-up-1.png"
+            src="./images/line-up-1.png"
             alt="Валя Чиковал"
           />
 
@@ -44,7 +44,7 @@
         <article class="artist-card">
           <img
             class="artist-image"
-            src="../Chik-4/images/line-up-2.png"
+            src="./images/line-up-2.png"
             alt="Чикстин Бебир"
           />
 
@@ -55,11 +55,7 @@
         </article>
 
         <article class="artist-card">
-          <img
-            class="artist-image"
-            src="../Chik-4/images/line-up-3.png"
-            alt="чикли"
-          />
+          <img class="artist-image" src="./images/line-up-3.png" alt="чикли" />
 
           <h3 class="artist-name">Чикли ХСХ</h3>
         </article>
@@ -67,7 +63,7 @@
         <article class="artist-card">
           <img
             class="artist-image"
-            src="../Chik-4/images/line-up-4.png"
+            src="./images/line-up-4.png"
             alt="Чирикнутая молли"
           />
 
@@ -80,7 +76,7 @@
         <article class="artist-card">
           <img
             class="artist-image"
-            src="../Chik-4/images/line-up-5.png"
+            src="./images/line-up-5.png"
             alt="Чикасамка"
           />
 
@@ -111,7 +107,7 @@
             становятся частью большой музыкальной стаи.
           </p>
 
-          <a href="#" class="footer-button">Купить билет</a>
+          <a class="footer-button open-ticket-modal"> Купить билет </a>ы
         </div>
 
         <div class="footer-links">
@@ -141,5 +137,29 @@
 
       <div class="footer-bottom">Chik Party. Все права расправлены.</div>
     </footer>
+    <div class="ticket-modal">
+      <div class="ticket-modal-content">
+        <button class="ticket-modal-close">✕</button>
+
+        <h2>Купить билет</h2>
+
+        <form class="ticket-form">
+          <input type="text" placeholder="Ваше имя" required />
+
+          <input type="email" placeholder="E-mail" required />
+
+          <input type="tel" placeholder="Телефон" required />
+
+          <select required>
+            <option value="">Выберите билет</option>
+            <option>Стандарт</option>
+            <option>ВИПчик</option>
+            <option>Бэкстейж</option>
+          </select>
+
+          <button type="submit" class="ticket-form-btn">Отправить</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

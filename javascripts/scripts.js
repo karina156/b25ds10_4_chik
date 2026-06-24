@@ -78,3 +78,30 @@ function processMap() {
   content.addEventListener('scroll', changeProcessCard)
   changeProcessCard()
 }
+
+function ticketModal() {
+  const modal = document.querySelector('.ticket-modal')
+  const openBtns = document.querySelectorAll('.open-ticket-modal')
+  const closeBtn = document.querySelector('.ticket-modal-close')
+
+  if (!modal || !closeBtn || !openBtns.length) return
+
+  openBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault()
+      modal.classList.add('active')
+    })
+  })
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active')
+  })
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active')
+    }
+  })
+}
+
+ticketModal()

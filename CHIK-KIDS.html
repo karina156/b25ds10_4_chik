@@ -23,7 +23,7 @@
         <a href="CHIK-KIDS.html">CHIK KIDS</a>
         <a href="CHIK PLATFORM.html">CHIK PLATFORM</a>
       </nav>
-      <a href="404.html" class="ticket-btn">Купить билет</a>
+      <a class="ticket-btn open-ticket-modal"> Купить билет </a>
     </header>
     <h1>CHIK KIDS</h1>
     <h2>Музыкальное гнездо для птенцов</h2>
@@ -33,11 +33,7 @@
       и творчество
     </p>
     <a href="https://karina156.github.io/chik/" target="_blank">
-      <img
-        class="poster"
-        src="../Chik-4/images/veb-poster-1.png"
-        alt="CHIK KIDS"
-      />
+      <img class="poster" src="./images/veb-poster-1.png" alt="CHIK KIDS" />
     </a>
     <footer class="footer">
       <div class="footer-main">
@@ -49,7 +45,7 @@
             становятся частью большой музыкальной стаи.
           </p>
 
-          <a href="#" class="footer-button">Купить билет</a>
+          <a class="footer-button open-ticket-modal"> Купить билет </a>
         </div>
 
         <div class="footer-links">
@@ -79,5 +75,29 @@
 
       <div class="footer-bottom">Chik Party. Все права расправлены.</div>
     </footer>
+    <div class="ticket-modal">
+      <div class="ticket-modal-content">
+        <button class="ticket-modal-close">✕</button>
+
+        <h2>Купить билет</h2>
+
+        <form class="ticket-form">
+          <input type="text" placeholder="Ваше имя" required />
+
+          <input type="email" placeholder="E-mail" required />
+
+          <input type="tel" placeholder="Телефон" required />
+
+          <select required>
+            <option value="">Выберите билет</option>
+            <option>Стандарт</option>
+            <option>ВИПчик</option>
+            <option>Бэкстейж</option>
+          </select>
+
+          <button type="submit" class="ticket-form-btn">Отправить</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
