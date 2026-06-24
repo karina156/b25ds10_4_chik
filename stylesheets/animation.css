@@ -1,0 +1,226 @@
+/* HEADER */
+
+.menu a,
+.ticket-btn,
+.logo {
+  transition: 0.25s ease;
+}
+
+.menu a:hover {
+  color: #6552d0;
+}
+
+.ticket-btn:hover {
+  background: #7355ee;
+  border-color: #9b82ff;
+  transform: translateY(-0.1vw);
+}
+
+.ticket-btn:active {
+  transform: translateY(0);
+}
+
+.logo:hover {
+  transform: rotate(-2deg) scale(1.04);
+}
+
+.logo:active {
+  transform: scale(0.98);
+}
+
+/* TICKETS */
+
+.ticket-card,
+.ticket-title,
+.ticket-badge,
+.ticket-button {
+  transition: 0.3s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-0.3vw);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1vw 3vw rgba(103, 72, 219, 0.25);
+}
+
+.ticket-card:hover .ticket-title {
+  transform: translateX(0.5vw);
+}
+
+.ticket-badge:hover {
+  transform: scale(1.08);
+}
+
+.ticket-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 1.5vw rgba(223, 255, 79, 0.4);
+}
+
+.ticket-button:active {
+  transform: scale(0.95);
+}
+
+/* FAQ */
+
+.faq-item {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-0.2vw);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0.8vw 2vw rgba(103, 72, 219, 0.2);
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  animation: fadeIn 0.3s ease;
+}
+
+/* BIRDS */
+
+.bird-left {
+  animation: float-left 4s ease-in-out infinite;
+}
+
+.bird-right {
+  animation: float-right 4s ease-in-out infinite 2s;
+}
+
+/* LINE-UP */
+
+.artist-card {
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-0.5vw);
+}
+
+/* NAVIGATION CARDS */
+
+.nav-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.nav-card-title {
+  transition: transform 0.35s ease;
+}
+
+.nav-card:hover {
+  transform: translateY(-0.4vw);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1vw 3vw rgba(103, 72, 219, 0.25);
+}
+
+.nav-card:hover .nav-card-title {
+  transform: scale(2);
+  transform-origin: top left;
+}
+
+/* PARTY PAGE */
+
+.marquee-track {
+  animation: marquee 14s linear infinite;
+}
+
+.party-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.party-card h2 {
+  transition: transform 0.35s ease;
+}
+
+.party-card:hover {
+  transform: translateY(-0.4vw);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1vw 3vw rgba(103, 72, 219, 0.25);
+}
+
+.party-card:hover h2 {
+  transform: scale(1.4);
+  transform-origin: top left;
+}
+
+/* KEYFRAMES */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5vw);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-left {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-25deg);
+  }
+
+  50% {
+    transform: translateY(-1vw) rotate(-20deg);
+  }
+}
+
+@keyframes float-right {
+  0%,
+  100% {
+    transform: translateY(0) rotate(25deg);
+  }
+
+  50% {
+    transform: translateY(-1vw) rotate(20deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float-bird {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-1vw) rotate(2deg);
+  }
+}
+@keyframes hover-bird {
+  from {
+    transform: translateY(0) scale(1.03) rotate(-3deg);
+  }
+
+  to {
+    transform: translateY(-0.8vw) scale(1.08) rotate(3deg);
+  }
+}
