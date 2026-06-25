@@ -1,1 +1,609 @@
+@media (max-width: 440px) {
+  body {
+    padding: 5vw 4vw 8vw;
+  }
 
+  h1 {
+    margin-top: 18vw;
+    font-size: 18vw;
+    letter-spacing: 0;
+  }
+
+  h2 {
+    font-size: 5vw;
+  }
+
+  p {
+    max-width: 80vw;
+    font-size: 3.6vw;
+    line-height: 1.3;
+  }
+
+  .header {
+    height: 14vw;
+    padding: 0 4vw;
+  }
+
+  .logo img,
+  .logo-image {
+    width: 20vw;
+    height: auto;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .ticket-btn {
+    height: 7vw;
+    padding: 0 3vw;
+
+    font-size: 2.6vw;
+    border-radius: 1.5vw;
+  }
+
+  .general {
+    padding: 20vw 0 10vw;
+  }
+
+  .big-logo {
+    width: 85vw;
+  }
+
+  .general-info {
+    position: static;
+
+    display: block;
+    margin-top: 6vw;
+  }
+
+  .general-title {
+    width: 70vw;
+
+    font-size: 4vw;
+  }
+
+  .general-text {
+    width: 80vw;
+    margin-top: 3vw;
+
+    font-size: 3.4vw;
+  }
+
+  .tickets {
+    margin-top: 10vw;
+  }
+
+  .ticket-card {
+    min-height: 26vw;
+    padding: 5vw;
+
+    border-radius: 4vw;
+  }
+
+  .ticket-card:not(:first-child) {
+    margin-top: -5vw;
+  }
+
+  .ticket-title {
+    font-size: 7vw;
+  }
+
+  .ticket-description {
+    max-width: 60vw;
+
+    font-size: 3vw;
+    line-height: 1.15;
+  }
+
+  .ticket-badge {
+    width: 12vw;
+    height: 7vw;
+
+    font-size: 3vw;
+  }
+
+  .ticket-button {
+    width: 9vw;
+    height: 9vw;
+
+    font-size: 5vw;
+  }
+
+  .about-party {
+    margin-top: 22vw;
+    padding: 0;
+  }
+
+  .about-party-title {
+    max-width: 85vw;
+
+    font-size: 6vw;
+  }
+
+  .bird {
+    width: 22vw;
+  }
+
+  .bird-left {
+    left: -4vw;
+    bottom: 18vw;
+  }
+
+  .bird-right {
+    top: 18vw;
+    right: -3vw;
+  }
+
+  .faq {
+    gap: 2vw;
+    margin-top: 22vw;
+  }
+
+  .faq-item {
+    border-radius: 4vw;
+  }
+
+  .faq-item summary {
+    min-height: 14vw;
+    padding: 0 14vw 0 4vw;
+  }
+
+  .faq-item summary span:first-child {
+    font-size: 4vw;
+  }
+
+  .faq-answer {
+    max-width: 80vw;
+    padding: 0 4vw 5vw;
+
+    font-size: 3vw;
+  }
+
+  .faq-icon-circle {
+    right: 3vw;
+
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .faq-icon {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .party-page {
+    padding-top: 18vw;
+  }
+
+  .marquee-track span {
+    font-size: 13vw;
+  }
+
+  .party-description {
+    max-width: 82vw;
+    margin-top: 6vw;
+    margin-left: 0;
+
+    font-size: 3.4vw;
+  }
+
+  .party-links {
+    gap: 3vw;
+    margin-top: 8vw;
+    padding: 0;
+  }
+
+  .party-card-row {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .party-card,
+  .party-card-small,
+  .party-card-large {
+    width: 100%;
+    min-height: 28vw;
+    padding: 4vw;
+
+    border-radius: 4vw;
+  }
+
+  .party-card h2 {
+    font-size: 10vw;
+  }
+
+  .line-up-section {
+    margin-top: 16vw;
+  }
+
+  .line-up-slider {
+    gap: 3vw;
+  }
+
+  .artist-card {
+    flex: 0 0 42vw;
+
+    height: 56vw;
+    margin-top: 8vw;
+
+    border-radius: 3vw;
+  }
+
+  .artist-name {
+    left: 2vw;
+    bottom: 2vw;
+
+    font-size: 4vw;
+  }
+
+  .navigation-cards {
+    gap: 3vw;
+    margin-top: 12vw;
+  }
+
+  .nav-card.small,
+  .nav-card.large {
+    flex: none;
+    width: 100%;
+    height: 24vw;
+    min-height: auto;
+
+    padding: 4vw;
+    border-radius: 4vw;
+  }
+
+  .nav-card-title {
+    font-size: 9vw;
+  }
+
+  .party-about-screen {
+    height: auto;
+    padding-top: 18vw;
+    padding-bottom: 16vw;
+  }
+
+  .party-about-title {
+    font-size: 14vw;
+  }
+
+  .party-about-content {
+    display: block;
+    margin-top: 8vw;
+  }
+
+  .party-about-text {
+    max-width: 80vw;
+  }
+
+  .party-about-text h2 {
+    font-size: 4.5vw;
+  }
+
+  .party-about-image {
+    position: relative;
+    top: auto;
+    right: auto;
+
+    width: 110vw;
+    margin-top: 6vw;
+    margin-left: -18vw;
+  }
+
+  .zine-section {
+    display: block;
+    margin-top: 12vw;
+  }
+
+  .zine-cover-wrap {
+    height: auto;
+    padding-left: 0;
+  }
+
+  .zine-cover {
+    width: 55vw;
+    height: auto;
+  }
+
+  .zine-content {
+    padding-left: 0;
+    margin-top: 6vw;
+  }
+
+  .zine-info {
+    width: 80vw;
+  }
+
+  .zine-title {
+    font-size: 6vw;
+  }
+
+  .zine-text {
+    max-width: 80vw;
+
+    font-size: 3.3vw;
+  }
+
+  .zine-button {
+    height: 8vw;
+    padding: 0 4vw;
+
+    font-size: 3vw;
+    border-radius: 1.5vw;
+  }
+
+  .zine-gallery {
+    gap: 3vw;
+    margin-top: 6vw;
+  }
+
+  .zine-gallery img {
+    flex: 0 0 55vw;
+
+    width: 55vw;
+    height: 78vw;
+  }
+
+  .merch-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+
+    margin-top: 8vw;
+  }
+
+  .merch-item-wide {
+    grid-column: span 2;
+  }
+
+  .merch-card {
+    border-radius: 3vw;
+  }
+
+  .merch-bottom span {
+    font-size: 2.4vw;
+  }
+
+  .merch-button {
+    right: 2vw;
+    bottom: 2vw;
+
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .merch-button img {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .video-screen {
+    display: block;
+
+    margin-top: 18vw;
+    margin-bottom: 16vw;
+  }
+
+  .video-info h2 {
+    max-width: 70vw;
+
+    font-size: 5vw;
+  }
+
+  .video-info p {
+    max-width: 80vw;
+
+    font-size: 3.4vw;
+  }
+
+  .video-bird {
+    left: -35vw;
+    bottom: -70vw;
+
+    width: 95vw;
+  }
+
+  .video-frame {
+    width: 100%;
+    max-width: none;
+    height: 52vw;
+
+    margin-top: 8vw;
+  }
+
+  .process-map {
+    display: block;
+
+    margin-top: 8vw;
+  }
+
+  .process-sidebar {
+    position: relative;
+    top: auto;
+
+    height: 32vw;
+    margin-bottom: 4vw;
+  }
+
+  .process-card {
+    padding: 4vw;
+
+    border-radius: 4vw;
+  }
+
+  .process-card h2 {
+    font-size: 7vw;
+  }
+
+  .process-card p {
+    max-width: 70vw;
+
+    font-size: 3vw;
+  }
+
+  .process-content {
+    height: 95vw;
+  }
+
+  .plan-step,
+  .scenes-step,
+  .secret-step {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-img-small,
+  .small {
+    width: 44vw;
+    height: 44vw;
+  }
+
+  .map-img-wide,
+  .wide {
+    width: 44vw;
+    height: 44vw;
+    grid-column: auto;
+  }
+
+  .full {
+    width: 89vw;
+    height: 55vw;
+  }
+
+  .program-screen {
+    min-height: 100vh;
+    padding: 22vw 0 10vw;
+  }
+
+  .program-title {
+    font-size: 16vw;
+  }
+
+  .program-slider {
+    gap: 8vw;
+    padding: 12vw 35vw 8vw 30vw;
+  }
+
+  .program-card {
+    flex: 0 0 55vw;
+  }
+
+  .program-card img {
+    width: 55vw;
+    height: 78vw;
+  }
+
+  .program-info p,
+  .program-info span {
+    font-size: 3.2vw;
+  }
+
+  .footer {
+    margin-top: 16vw;
+    padding: 8vw 4vw;
+  }
+
+  .footer-main {
+    display: block;
+  }
+
+  .footer-hero h2 {
+    font-size: 11vw;
+    line-height: 0.9;
+  }
+
+  .footer-hero p {
+    max-width: 82vw;
+
+    font-size: 3.3vw;
+  }
+
+  .footer-button {
+    height: 8vw;
+    padding: 0 4vw;
+
+    font-size: 3vw;
+    border-radius: 1.5vw;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6vw;
+
+    margin-top: 8vw;
+  }
+
+  .footer-column h3 {
+    font-size: 3.5vw;
+  }
+
+  .footer-column a {
+    font-size: 3vw;
+  }
+
+  .footer-bottom {
+    margin-top: 8vw;
+
+    font-size: 2.8vw;
+  }
+
+  .ticket-modal-content {
+    width: 88vw;
+    padding: 6vw;
+
+    border-radius: 5vw;
+  }
+
+  .ticket-modal-content h2 {
+    font-size: 7vw;
+  }
+
+  .ticket-form input,
+  .ticket-form select,
+  .ticket-form-btn {
+    padding: 3.5vw;
+
+    font-size: 3.5vw;
+    border-radius: 3vw;
+  }
+
+  .ticket-modal-close {
+    top: 4vw;
+    right: 4vw;
+
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5vw;
+
+    width: 100%;
+    height: 100vh;
+    padding-left: 8vw;
+
+    background: #050505;
+
+    border-radius: 0 0 5vw 5vw;
+
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .burger-toggle:checked ~ .menu {
+    transform: translateX(0);
+  }
+
+  .menu a {
+    font-size: 7vw;
+  }
+}

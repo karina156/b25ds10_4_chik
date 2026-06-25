@@ -103,5 +103,3 @@ function ticketModal() {
     }
   })
 }
-
-ticketModal()
