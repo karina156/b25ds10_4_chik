@@ -1554,7 +1554,6 @@ p {
 
   width: 34vw;
   padding: 3vw;
-
   background: #050505;
   border: 0.1vw solid #6748db;
   border-radius: 2vw;
@@ -1565,13 +1564,14 @@ p {
   margin-bottom: 2vw;
 
   color: #dfff4f;
-  font-size: 2.4vw;
+  font-size: 2vw;
+  font-weight: 500;
 }
 
 .ticket-form {
   display: flex;
   flex-direction: column;
-  gap: 1vw;
+  gap: 2vw;
 }
 
 .ticket-form input,
@@ -1582,8 +1582,8 @@ p {
   border: 0.05vw solid rgba(255, 255, 255, 0.2);
   border-radius: 1vw;
 
-  color: white;
-  font-size: 1vw;
+  color: rgb(210, 210, 210);
+  font-size: 1.11vw;
 }
 
 .ticket-form input::placeholder {
@@ -1596,14 +1596,14 @@ p {
 
 .ticket-form-btn {
   margin-top: 1vw;
-  padding: 1.2vw;
+  padding: 1vw;
 
   background: #6748db;
   border: none;
   border-radius: 1vw;
 
-  color: white;
-  font-size: 1vw;
+  color: #d9ee61;
+  font-size: 1.11vw;
 
   cursor: pointer;
   transition: 0.3s;
@@ -1625,4 +1625,14 @@ p {
   font-size: 1.5vw;
 
   cursor: pointer;
+}
+.ticket-form select {
+  padding: 1.2vw;
+  padding-right: 2.5vw;
+
+  background: transparent;
+  border: 0.05vw solid rgba(255, 255, 255, 0.2);
+  border-radius: 1vw;
+
+  color: rgba(255, 255, 255, 0.5); /* такой же цвет, как placeholder */
 }

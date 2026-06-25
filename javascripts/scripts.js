@@ -4,6 +4,7 @@ burgerMenu()
 submitForm()
 input()
 processMap()
+ticketModal()
 
 function burgerMenu() {
   const burger = document.querySelector('.burger')
