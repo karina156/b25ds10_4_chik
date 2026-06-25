@@ -1364,6 +1364,8 @@ p {
 
   flex: 0 0 24vw;
 
+  overflow: hidden;
+
   scroll-snap-align: center;
 }
 
@@ -1374,6 +1376,8 @@ p {
   height: 34vw;
 
   object-fit: cover;
+
+  border-radius: 2vw;
 }
 
 .program-card:nth-child(odd) {
@@ -1387,7 +1391,6 @@ p {
 .program-card:nth-child(3n) {
   transform: rotate(10deg);
 }
-
 /* ИНФОРМАЦИЯ */
 
 .program-info {
