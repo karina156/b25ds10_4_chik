@@ -3,163 +3,246 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>О вечеринке — Chik Party</title>
+    <meta name="description" content="Пространство Chik Party: тематические сцены, интерактивные зоны, мерч, лаунж-зоны и официальный зин." />
+    <meta name="theme-color" content="#050505" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="О вечеринке — Chik Party" />
+    <meta property="og:description" content="Пространство Chik Party: тематические сцены, интерактивные зоны, мерч, лаунж-зоны и официальный зин." />
+    <meta property="og:image" content="https://karina156.github.io/b25ds10_4_chik/images/og-image.jpg" />
+
     <link rel="icon" type="image/png" href="./images/favicon.png" />
-    <title>О вечеринке</title>
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <script src="javascripts/scripts.js" defer></script>
+    <link rel="preload" href="./fonts/montserrat-medium.woff" as="font" type="font/woff" crossorigin />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <script src="./javascripts/scripts.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
 
-      <label for="burger-toggle" class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <a href="index.html" class="logo">
-        <img src="./images/logo.svg" alt="лого" />
+    <header class="header">
+      <a class="logo" href="index.html" aria-label="Chik Party, на главную">
+        <img src="./images/logo.svg" alt="Chik Party" width="104" height="41" />
       </a>
 
-      <nav class="menu">
-        <a href="about-party.html">О вечеринке</a>
+      <nav class="menu" id="menu" aria-label="Основное меню">
         <a href="party.html">Вечеринка</a>
-        <a href="programm.html">Программа</a>
+        <a href="about-party.html" aria-current="page">О вечеринке</a>
+        <a href="program.html">Программа</a>
         <a href="line-up.html">Лайн-ап</a>
         <a href="map.html">Карта</a>
         <a href="merch.html">Мерч</a>
-        <a href="CHIK-KIDS.html">CHIK KIDS</a>
-        <a href="CHIK PLATFORM.html">CHIK PLATFORM</a>
+        <a href="kids.html">CHIK KIDS</a>
+        <a href="platform.html">CHIK PLATFORM</a>
       </nav>
-      <a href="#" class="footer-button open-ticket-modal"> Купить билет </a>
+
+      <div class="header-actions">
+        <button class="cart-btn" type="button" data-open="cart" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 7h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </button>
+
+        <button class="btn" type="button" data-open="ticket">Купить билет</button>
+
+        <button class="burger" type="button" aria-label="Открыть меню" aria-controls="menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
-    <section class="party-about-screen">
-      <h1 class="party-about-title">О вечеринке</h1>
 
-      <div class="party-about-content">
-        <div class="party-about-text">
-          <h2>Исследуй пространство вечеринки</h2>
+    <main id="main">
+      <section class="about-intro">
+        <h1 class="title">О вечеринке</h1>
 
-          <p>
+        <div>
+          <h2 class="intro-subtitle">Исследуй пространство<br />вечеринки</h2>
+          <p class="text">
             Несколько тематических сцен, интерактивные зоны, магазины мерча и
-            специальные лаунж-зоны. Интерактивная карта поможет спланировать
-            маршрут.
+            специальные лаунж-зоны. Интерактивная карта поможет спланировать маршрут.
           </p>
         </div>
 
-        <img class="party-about-image" src="./images/3d.svg" alt="" />
-      </div>
-    </section>
-    <section class="zine-section">
-      <div class="zine-cover-wrap">
-        <img class="zine-cover" src="./images/zine-cover.png" alt="" />
-      </div>
+        <img class="about-bird bird-click" src="./images/bird-3d.webp" alt="Птичка Chik" width="467" height="900" />
+      </section>
 
-      <div class="zine-content">
-        <div class="zine-info">
-          <h2 class="zine-title">
-            Официальный зин<br />
-            Chik Party
-          </h2>
+      <section class="zine" aria-labelledby="zine-title">
+        <img class="zine-cover" src="./images/zine-cover.webp" alt="Обложка зина Chik Party" width="273" height="775" loading="lazy" decoding="async" />
 
-          <p class="zine-text">
-            Коллекционное издание, посвящённое артистам, визуальной эстетике и
-            закулисной жизни вечеринки. Внутри — фотографии, иллюстрации и
-            эксклюзивные материалы.
-          </p>
+        <div>
+          <div class="zine-info">
+            <h2 class="zine-title" id="zine-title">Официальный зин<br />Chik Party</h2>
+            <p class="text">
+              Коллекционное издание, посвящённое артистам, визуальной эстетике и
+              закулисной жизни вечеринки. Внутри — фотографии, иллюстрации и
+              эксклюзивные материалы.
+            </p>
+            <a class="btn" href="https://disk.360.yandex.ru/d/OvfIPNhNZ461og" target="_blank" rel="noopener">Прочитать полностью</a>
+          </div>
 
-          <a
-            class="zine-button"
-            href="https://disk.360.yandex.ru/d/OvfIPNhNZ461og?clckid=22af0450"
-            >Прочитать полностью</a
-          >
+          <div class="gallery">
+            <button type="button" data-lightbox="zine" data-src="./images/zine-1.webp" aria-label="Открыть разворот 1">
+              <img src="./images/zine-1.webp" alt="Разворот зина 1" width="545" height="775" loading="lazy" decoding="async" />
+            </button>
+            <button type="button" data-lightbox="zine" data-src="./images/zine-2.webp" aria-label="Открыть разворот 2">
+              <img src="./images/zine-2.webp" alt="Разворот зина 2" width="545" height="775" loading="lazy" decoding="async" />
+            </button>
+            <button type="button" data-lightbox="zine" data-src="./images/zine-3.webp" aria-label="Открыть разворот 3">
+              <img src="./images/zine-3.webp" alt="Разворот зина 3" width="545" height="775" loading="lazy" decoding="async" />
+            </button>
+            <button type="button" data-lightbox="zine" data-src="./images/zine-4.webp" aria-label="Открыть разворот 4">
+              <img src="./images/zine-4.webp" alt="Разворот зина 4" width="545" height="775" loading="lazy" decoding="async" />
+            </button>
+            <button type="button" data-lightbox="zine" data-src="./images/zine-5.webp" aria-label="Открыть разворот 5">
+              <img src="./images/zine-5.webp" alt="Разворот зина 5" width="545" height="775" loading="lazy" decoding="async" />
+            </button>
+          </div>
         </div>
+      </section>
 
-        <div class="zine-gallery">
-          <img src="./images/zine-1.png" alt="" />
-          <img src="./images/zine-2.png" alt="" />
-          <img src="./images/zine-3.png" alt="" />
-          <img src="./images/zine-4.png" alt="" />
-          <img src="./images/zine-5.png" alt="" />
-        </div>
-      </div>
-    </section>
-    <section class="navigation-cards">
-      <a href="programm.html" class="nav-card small">
-        <h2 class="nav-card-title">Программа</h2>
-      </a>
+      <section class="next-pages" aria-label="Другие страницы">
+        <a class="card next-card" href="program.html">
+          <h2 class="next-card-title">Программа</h2>
+        </a>
 
-      <a href="line-up.html" class="nav-card small">
-        <h2 class="nav-card-title">Лайн-ап</h2>
-      </a>
+        <a class="card next-card" href="line-up.html">
+          <h2 class="next-card-title">Лайн-ап</h2>
+        </a>
 
-      <a href="map.html" class="nav-card large">
-        <h2 class="nav-card-title">Сцены и карта</h2>
-      </a>
-    </section>
+        <a class="card next-card next-card-wide" href="map.html">
+          <h2 class="next-card-title">Сцены и карта</h2>
+        </a>
+      </section>
+    </main>
+
     <footer class="footer">
       <div class="footer-main">
         <div class="footer-hero">
-          <h2>Не улетай <br />без билета</h2>
-
-          <p>
+          <h2 class="subtitle">Не улетай<br />без билета</h2>
+          <p class="text">
             Chik Party — ночь, где птицы поют, танцуют, слушают друг друга и
             становятся частью большой музыкальной стаи.
           </p>
-
-          <a class="footer-button open-ticket-modal"> Купить билет </a>
+          <button class="btn btn-lime" type="button" data-open="ticket">Купить билет</button>
         </div>
 
         <div class="footer-links">
           <div class="footer-column">
             <h3>Событие</h3>
             <a href="about-party.html">О вечеринке</a>
-            <a href="programm.html">Программа</a>
+            <a href="program.html">Программа</a>
             <a href="line-up.html">Лайн-ап</a>
             <a href="map.html">Сцены и карта</a>
           </div>
 
           <div class="footer-column">
             <h3>Платформа</h3>
-            <a href="#">О Chik</a>
-            <a href="#">Для артистов</a>
-            <a href="#">Для слушателей</a>
-            <a href="CHIK-KIDS.html">Chik Kids</a>
+            <a href="platform.html">О Chik</a>
+            <a href="kids.html">Chik Kids</a>
+            <a href="merch.html">Мерч</a>
           </div>
 
           <div class="footer-column">
             <h3>Связь</h3>
             <a href="mailto:hello@chik.party">hello@chik.party</a>
-            <a href="#">@chikparty</a>
+            <span>@chikparty</span>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">Chik Party. Все права расправлены.</div>
+      <div class="footer-bottom">
+        <span>© 2026 Chik Party. Все права расправлены.</span>
+        <span>Манукян Карина, б25дз10</span>
+      </div>
     </footer>
-    <div class="ticket-modal">
-      <div class="ticket-modal-content">
-        <button class="ticket-modal-close">✕</button>
 
-        <h2>Купить билет</h2>
+    <div class="modal" id="ticket" role="dialog" aria-modal="true" aria-labelledby="ticket-title" hidden>
+      <div class="modal-box">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
 
-        <form class="ticket-form">
-          <input type="text" placeholder="Ваше имя" required />
+        <h2 class="modal-title" id="ticket-title">Купить билет</h2>
+        <p class="modal-text modal-text-start">Оставь заявку, и мы пришлём билет на почту.</p>
 
-          <input type="email" placeholder="E-mail" required />
+        <form class="form ticket-form" novalidate>
+          <div class="field">
+            <label for="ticket-name">Имя</label>
+            <input id="ticket-name" type="text" name="name" autocomplete="name" placeholder="Как тебя зовут" required />
+            <span class="field-error">Напиши, как тебя зовут</span>
+          </div>
 
-          <input type="tel" placeholder="Телефон" required />
+          <div class="field">
+            <label for="ticket-email">E-mail</label>
+            <input id="ticket-email" type="email" name="email" autocomplete="email" placeholder="bird@chik.party" required />
+            <span class="field-error">Проверь, что почта написана правильно</span>
+          </div>
 
-          <select required>
-            <option value="">Выберите билет</option>
-            <option>Стандарт</option>
-            <option>ВИПчик</option>
-            <option>Бэкстейж</option>
-          </select>
+          <div class="field">
+            <label for="ticket-phone">Телефон</label>
+            <input id="ticket-phone" type="tel" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required />
+            <span class="field-error">Нужен номер из 11 цифр</span>
+          </div>
 
-          <button type="submit" class="ticket-form-btn">Отправить</button>
+          <div class="field">
+            <label for="ticket-type">Билет</label>
+            <select id="ticket-type" name="ticket" required>
+              <option value="">Выбери билет</option>
+              <option value="Стандарт">Стандарт</option>
+              <option value="ВИПчик">ВИПчик</option>
+              <option value="Бэкстейж">Бэкстейж</option>
+            </select>
+            <span class="field-error">Выбери билет</span>
+          </div>
+
+          <button class="btn btn-lime" type="submit">Отправить заявку</button>
         </form>
+
+        <div class="success" aria-live="polite">
+          <img src="./images/icon-bird.svg" alt="" width="163" height="129" />
+          <h2 class="modal-title">Чирик!</h2>
+          <p class="modal-text success-text"></p>
+          <button class="btn" type="button" data-close>Отлично</button>
+        </div>
       </div>
     </div>
+
+    <div class="modal" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+      <div class="modal-box">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
+
+        <h2 class="modal-title" id="cart-title">Корзина</h2>
+
+        <div class="modal-text-start">
+          <p class="cart-empty">Пока пусто. Загляни в <a class="accent" href="merch.html">мерч</a>.</p>
+          <ul class="cart-list"></ul>
+          <div class="cart-total" hidden>
+            <span>Итого</span>
+            <span class="cart-sum">0 ₽</span>
+          </div>
+          <button class="btn btn-lime cart-order" type="button" hidden>Оформить заказ</button>
+        </div>
+
+        <div class="success" aria-live="polite">
+          <img src="./images/icon-bird.svg" alt="" width="163" height="129" />
+          <h2 class="modal-title">Заказ оформлен</h2>
+          <p class="modal-text">Забери его на стойке мерча в день вечеринки.</p>
+          <button class="btn" type="button" data-close>Хорошо</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр картинки" hidden>
+      <div class="modal-box">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
+        <button class="btn btn-round btn-ghost lightbox-arrow lightbox-prev" type="button" aria-label="Предыдущая">←</button>
+        <img class="lightbox-image" src="./images/favicon.png" alt="" />
+        <button class="btn btn-round btn-ghost lightbox-arrow lightbox-next" type="button" aria-label="Следующая">→</button>
+      </div>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
   </body>
 </html>

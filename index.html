@@ -3,226 +3,257 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chik Party — главная музыкальная вечеринка для птиц</title>
+    <meta name="description" content="Раз в году артисты Chik Platform выступают на одной сцене. Билеты, программа, лайн-ап и карта вечеринки." />
+    <meta name="theme-color" content="#050505" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chik Party — главная музыкальная вечеринка для птиц" />
+    <meta property="og:description" content="Раз в году артисты Chik Platform выступают на одной сцене. Билеты, программа, лайн-ап и карта вечеринки." />
+    <meta property="og:image" content="https://karina156.github.io/b25ds10_4_chik/images/og-image.jpg" />
+
     <link rel="icon" type="image/png" href="./images/favicon.png" />
-    <title>Chik главная</title>
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <script src="javascripts/scripts.js" defer></script>
+    <link rel="preload" href="./fonts/montserrat-medium.woff" as="font" type="font/woff" crossorigin />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <script src="./javascripts/scripts.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
 
-      <label for="burger-toggle" class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <a href="index.html" class="logo">
-        <img src="./images/logo.svg" alt="лого" />
+    <header class="header">
+      <a class="logo" href="index.html" aria-label="Chik Party, на главную">
+        <img src="./images/logo.svg" alt="Chik Party" width="104" height="41" />
       </a>
 
-      <nav class="menu">
-        <a href="about-party.html">О вечеринке</a>
+      <nav class="menu" id="menu" aria-label="Основное меню">
         <a href="party.html">Вечеринка</a>
-        <a href="programm.html">Программа</a>
+        <a href="about-party.html">О вечеринке</a>
+        <a href="program.html">Программа</a>
         <a href="line-up.html">Лайн-ап</a>
         <a href="map.html">Карта</a>
         <a href="merch.html">Мерч</a>
-        <a href="CHIK-KIDS.html">CHIK KIDS</a>
-        <a href="CHIK PLATFORM.html">CHIK PLATFORM</a>
+        <a href="kids.html">CHIK KIDS</a>
+        <a href="platform.html">CHIK PLATFORM</a>
       </nav>
-      <a href="#" class="ticket-btn open-ticket-modal"> Купить билет </a>
-    </header>
-    <section class="general">
-      <img class="big-logo" src="./images/big-logo.svg" alt="Chik" />
 
-      <div class="general-info">
-        <p class="general-title">Главная музыкальная вечеринка для птиц</p>
+      <div class="header-actions">
+        <button class="cart-btn" type="button" data-open="cart" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 7h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </button>
 
-        <p class="general-text">
-          Раз в году самые популярные артисты платформы Chik собираются на одной
-          сцене, чтобы устроить незабываемую музыкальную вечеринку.
-        </p>
+        <button class="btn" type="button" data-open="ticket">Купить билет</button>
+
+        <button class="burger" type="button" aria-label="Открыть меню" aria-controls="menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </section>
+    </header>
 
-    <section class="tickets">
-      <article class="ticket-card">
-        <div class="ticket-content">
-          <h2 class="ticket-title">Стандарт</h2>
+    <main id="main">
+      <section class="hero">
+        <img class="hero-logo" src="./images/big-logo.svg" alt="Chik" width="1436" height="507" fetchpriority="high" />
 
-          <p class="ticket-description">
-            Базовый билет с доступом ко всем<br />
-            сценам и основным зонам вечеринки
+        <div class="hero-bottom">
+          <h1 class="hero-title">Главная музыкальная вечеринка для птиц</h1>
+          <p class="text">
+            Раз в году самые популярные артисты платформы Chik собираются на одной
+            сцене, чтобы устроить незабываемую музыкальную вечеринку.
           </p>
         </div>
+      </section>
 
-        <button class="ticket-button">→</button>
-      </article>
+      <section class="tickets" aria-label="Билеты">
+        <button class="ticket" type="button" data-open="ticket" data-ticket="Стандарт">
+          <span>
+            <span class="ticket-name">Стандарт</span>
+            <span class="ticket-text">Базовый билет с доступом ко всем сценам и основным зонам вечеринки</span>
+          </span>
+          <span class="ticket-arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="ticket ticket-vip" type="button" data-open="ticket" data-ticket="ВИПчик">
+          <span>
+            <span class="ticket-name">ВИПчик <span class="ticket-badge">Хит!</span></span>
+            <span class="ticket-text">Расширенный билет с быстрым входом, доступом в VIP Lounge и дополнительными подарками</span>
+          </span>
+          <span class="ticket-arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="ticket" type="button" data-open="ticket" data-ticket="Бэкстейж">
+          <span>
+            <span class="ticket-name">Бэкстейж</span>
+            <span class="ticket-text">Премиальный билет с доступом за кулисы, встречей с артистами и эксклюзивным мерчем</span>
+          </span>
+          <span class="ticket-arrow" aria-hidden="true">→</span>
+        </button>
+      </section>
 
-      <article class="ticket-card vip">
-        <div class="ticket-content">
-          <div class="ticket-header">
-            <h2 class="ticket-title">ВИПчик</h2>
-            <span class="ticket-badge">Хит!</span>
-          </div>
+      <section class="manifest">
+        <img class="manifest-bird manifest-bird-right bird-click" src="./images/icon-bird.svg" alt="" width="163" height="129" loading="lazy" decoding="async" />
+        <p class="manifest-text">
+          <span>Слушай</span> выступления, <span>знакомься</span> с новыми
+          исполнителями и <span>стань</span> частью мира, где птицы превращаются в
+          настоящих поп-звёзд
+        </p>
+        <img class="manifest-bird manifest-bird-left bird-click" src="./images/icon-bird.svg" alt="" width="163" height="129" loading="lazy" decoding="async" />
+      </section>
 
-          <p class="ticket-description">
-            Расширенный билет с быстрым входом, доступом<br />
-            в VIP Lounge и дополнительными подарками
-          </p>
+      <section class="faq" aria-label="Частые вопросы">
+        <div class="faq-list">
+          <details class="faq-item" name="faq">
+            <summary>
+              Когда проходит вечеринка?
+              <span class="faq-plus"><img src="./images/faq-icon.svg" alt="" width="36" height="36" /></span>
+            </summary>
+            <p class="faq-answer">Вечеринка проходит один раз в год. Точная дата публикуется заранее на сайте и в социальных сетях.</p>
+          </details>
+
+          <details class="faq-item" name="faq">
+            <summary>
+              Где проходит мероприятие?
+              <span class="faq-plus"><img src="./images/faq-icon.svg" alt="" width="36" height="36" /></span>
+            </summary>
+            <p class="faq-answer">На главной площадке Chik Arena. Адрес появится после открытия продаж билетов.</p>
+          </details>
+
+          <details class="faq-item" name="faq">
+            <summary>
+              Как попасть в лайн-ап?
+              <span class="faq-plus"><img src="./images/faq-icon.svg" alt="" width="36" height="36" /></span>
+            </summary>
+            <p class="faq-answer">Отправь заявку через Chik Platform и пройди отбор жюри.</p>
+          </details>
+
+          <details class="faq-item" name="faq">
+            <summary>
+              Где посмотреть выступления после события?
+              <span class="faq-plus"><img src="./images/faq-icon.svg" alt="" width="36" height="36" /></span>
+            </summary>
+            <p class="faq-answer">Все выступления будут в записи на Chik Platform после вечеринки.</p>
+          </details>
         </div>
+      </section>
+    </main>
 
-        <button class="ticket-button dark">→</button>
-      </article>
-
-      <article class="ticket-card">
-        <div class="ticket-content">
-          <h2 class="ticket-title">Бэкстейж</h2>
-
-          <p class="ticket-description">
-            Премиальный билет с доступом за кулисы,<br />
-            встречей с артистами и эксклюзивным мерчем
-          </p>
-        </div>
-
-        <button class="ticket-button">→</button>
-      </article>
-    </section>
-
-    <section class="about-party">
-      <img class="bird bird-left" src="./images/icon-bird.svg" alt="" />
-
-      <h2 class="about-party-title">
-        <span>Слушай</span> выступления, <span>знакомься</span> с новыми
-        исполнителями и <span>стань</span> частью мира, где птицы превращаются в
-        настоящих поп-звёзд.
-      </h2>
-
-      <img class="bird bird-right" src="./images/icon-bird.svg" alt="" />
-    </section>
-    <section class="faq">
-      <details class="faq-item">
-        <summary>
-          <span>Когда проходит вечеринка?</span>
-          <span class="faq-icon-circle">
-            <img class="faq-icon" src="./images/faq-icon.svg" alt="" />
-          </span>
-        </summary>
-
-        <p class="faq-answer">
-          Вечеринка проходит один раз в год. Точная дата публикуется заранее на
-          официальном сайте и в социальных сетях.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>Где проходит мероприятие?</span>
-          <span class="faq-icon-circle">
-            <img class="faq-icon" src="./images/faq-icon.svg" alt="" />
-          </span>
-        </summary>
-
-        <p class="faq-answer">
-          Мероприятие проходит на главной площадке Chik Arena. Адрес будет
-          указан после открытия продаж билетов.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>Как попасть в лайн-ап?</span>
-          <span class="faq-icon-circle">
-            <img class="faq-icon" src="./images/faq-icon.svg" alt="" />
-          </span>
-        </summary>
-
-        <p class="faq-answer">
-          Для участия необходимо отправить заявку через платформу CHIK PLATFORM
-          и пройти отбор жюри.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>Где посмотреть выступления после события?</span>
-          <span class="faq-icon-circle">
-            <img class="faq-icon" src="./images/faq-icon.svg" alt="" />
-          </span>
-        </summary>
-
-        <p class="faq-answer">
-          Все выступления будут доступны в записи на платформе CHIK PLATFORM
-          после завершения мероприятия.
-        </p>
-      </details>
-    </section>
     <footer class="footer">
       <div class="footer-main">
         <div class="footer-hero">
-          <h2>Не улетай <br />без билета</h2>
-
-          <p>
+          <h2 class="subtitle">Не улетай<br />без билета</h2>
+          <p class="text">
             Chik Party — ночь, где птицы поют, танцуют, слушают друг друга и
             становятся частью большой музыкальной стаи.
           </p>
-
-          <a href="#" class="footer-button open-ticket-modal"> Купить билет </a>
+          <button class="btn btn-lime" type="button" data-open="ticket">Купить билет</button>
         </div>
 
         <div class="footer-links">
           <div class="footer-column">
             <h3>Событие</h3>
             <a href="about-party.html">О вечеринке</a>
-            <a href="programm.html">Программа</a>
+            <a href="program.html">Программа</a>
             <a href="line-up.html">Лайн-ап</a>
             <a href="map.html">Сцены и карта</a>
           </div>
 
           <div class="footer-column">
             <h3>Платформа</h3>
-            <a href="#">О Chik</a>
-            <a href="#">Для артистов</a>
-            <a href="#">Для слушателей</a>
-            <a href="CHIK-KIDS.html">Chik Kids</a>
+            <a href="platform.html">О Chik</a>
+            <a href="kids.html">Chik Kids</a>
+            <a href="merch.html">Мерч</a>
           </div>
 
           <div class="footer-column">
             <h3>Связь</h3>
             <a href="mailto:hello@chik.party">hello@chik.party</a>
-            <a href="#">@chikparty</a>
+            <span>@chikparty</span>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">Chik Party. Все права расправлены.</div>
+      <div class="footer-bottom">
+        <span>© 2026 Chik Party. Все права расправлены.</span>
+        <span>Манукян Карина, б25дз10</span>
+      </div>
     </footer>
-    <div class="ticket-modal">
-      <div class="ticket-modal-content">
-        <button class="ticket-modal-close">✕</button>
 
-        <h2>Купить билет</h2>
+    <div class="modal" id="ticket" role="dialog" aria-modal="true" aria-labelledby="ticket-title" hidden>
+      <div class="modal-box">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
 
-        <form class="ticket-form">
-          <input type="text" name="name" placeholder="Ваше имя" required />
+        <h2 class="modal-title" id="ticket-title">Купить билет</h2>
+        <p class="modal-text modal-text-start">Оставь заявку, и мы пришлём билет на почту.</p>
 
-          <input type="email" name="email" placeholder="E-mail" required />
+        <form class="form ticket-form" novalidate>
+          <div class="field">
+            <label for="ticket-name">Имя</label>
+            <input id="ticket-name" type="text" name="name" autocomplete="name" placeholder="Как тебя зовут" required />
+            <span class="field-error">Напиши, как тебя зовут</span>
+          </div>
 
-          <input type="tel" name="phone" placeholder="Телефон" required />
+          <div class="field">
+            <label for="ticket-email">E-mail</label>
+            <input id="ticket-email" type="email" name="email" autocomplete="email" placeholder="bird@chik.party" required />
+            <span class="field-error">Проверь, что почта написана правильно</span>
+          </div>
 
-          <select name="ticket" required>
-            <option value="">Выберите билет</option>
-            <option value="Стандарт">Стандарт</option>
-            <option value="ВИПчик">ВИПчик</option>
-            <option value="Бэкстейж">Бэкстейж</option>
-          </select>
+          <div class="field">
+            <label for="ticket-phone">Телефон</label>
+            <input id="ticket-phone" type="tel" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required />
+            <span class="field-error">Нужен номер из 11 цифр</span>
+          </div>
 
-          <button type="submit" class="ticket-form-btn">
-            Отправить заявку
-          </button>
+          <div class="field">
+            <label for="ticket-type">Билет</label>
+            <select id="ticket-type" name="ticket" required>
+              <option value="">Выбери билет</option>
+              <option value="Стандарт">Стандарт</option>
+              <option value="ВИПчик">ВИПчик</option>
+              <option value="Бэкстейж">Бэкстейж</option>
+            </select>
+            <span class="field-error">Выбери билет</span>
+          </div>
+
+          <button class="btn btn-lime" type="submit">Отправить заявку</button>
         </form>
+
+        <div class="success" aria-live="polite">
+          <img src="./images/icon-bird.svg" alt="" width="163" height="129" />
+          <h2 class="modal-title">Чирик!</h2>
+          <p class="modal-text success-text"></p>
+          <button class="btn" type="button" data-close>Отлично</button>
+        </div>
       </div>
     </div>
+
+    <div class="modal" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+      <div class="modal-box">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
+
+        <h2 class="modal-title" id="cart-title">Корзина</h2>
+
+        <div class="modal-text-start">
+          <p class="cart-empty">Пока пусто. Загляни в <a class="accent" href="merch.html">мерч</a>.</p>
+          <ul class="cart-list"></ul>
+          <div class="cart-total" hidden>
+            <span>Итого</span>
+            <span class="cart-sum">0 ₽</span>
+          </div>
+          <button class="btn btn-lime cart-order" type="button" hidden>Оформить заказ</button>
+        </div>
+
+        <div class="success" aria-live="polite">
+          <img src="./images/icon-bird.svg" alt="" width="163" height="129" />
+          <h2 class="modal-title">Заказ оформлен</h2>
+          <p class="modal-text">Забери его на стойке мерча в день вечеринки.</p>
+          <button class="btn" type="button" data-close>Хорошо</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
   </body>
 </html>

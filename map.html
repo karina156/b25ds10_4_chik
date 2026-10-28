@@ -3,200 +3,324 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сцены и карта — Chik Party</title>
+    <meta name="description" content="Карта Chik Party: эскизы, план площадки, сцены и секретные уголки вечеринки." />
+    <meta name="theme-color" content="#050505" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Сцены и карта — Chik Party" />
+    <meta property="og:description" content="Карта Chik Party: эскизы, план площадки, сцены и секретные уголки вечеринки." />
+    <meta property="og:image" content="https://karina156.github.io/b25ds10_4_chik/images/og-image.jpg" />
+
     <link rel="icon" type="image/png" href="./images/favicon.png" />
-    <title>Карта</title>
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <script src="javascripts/scripts.js" defer></script>
+    <link rel="preload" href="./fonts/montserrat-medium.woff" as="font" type="font/woff" crossorigin />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <script src="./javascripts/scripts.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+
     <header class="header">
-      <input type="checkbox" id="burger-toggle" class="burger-toggle" />
-
-      <label for="burger-toggle" class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <a href="index.html" class="logo">
-        <img src="./images/logo.svg" alt="лого" />
+      <a class="logo" href="index.html" aria-label="Chik Party, на главную">
+        <img src="./images/logo.svg" alt="Chik Party" width="104" height="41" />
       </a>
 
-      <nav class="menu">
-        <a href="about-party.html">О вечеринке</a>
+      <nav class="menu" id="menu" aria-label="Основное меню">
         <a href="party.html">Вечеринка</a>
-        <a href="programm.html">Программа</a>
+        <a href="about-party.html">О вечеринке</a>
+        <a href="program.html">Программа</a>
         <a href="line-up.html">Лайн-ап</a>
-        <a href="map.html">Карта</a>
+        <a href="map.html" aria-current="page">Карта</a>
         <a href="merch.html">Мерч</a>
-        <a href="CHIK-KIDS.html">CHIK KIDS</a>
-        <a href="CHIK PLATFORM.html">CHIK PLATFORM</a>
+        <a href="kids.html">CHIK KIDS</a>
+        <a href="platform.html">CHIK PLATFORM</a>
       </nav>
-      <a href="#" class="footer-button open-ticket-modal"> Купить билет </a>
+
+      <div class="header-actions">
+        <button class="cart-btn" type="button" data-open="cart" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 7h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </button>
+
+        <button class="btn" type="button" data-open="ticket">Купить билет</button>
+
+        <button class="burger" type="button" aria-label="Открыть меню" aria-controls="menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
-    <section class="video-screen">
-      <div class="video-info">
-        <h2>
-          Исследуй пространство<br />
-          вечеринки
-        </h2>
 
-        <p>
-          Несколько тематических сцен, интерактивные зоны, магазины мерча<br />
-          и специальные лаунж-зоны. Интерактивная карта поможет спланировать
-          маршрут
-        </p>
+    <main id="main">
+      <h1 class="visually-hidden">Сцены и карта</h1>
 
-        <img class="video-bird" src="./images/3d.svg" alt="" />
-      </div>
-
-      <div class="video-frame">
-        <video autoplay muted loop playsinline controls>
-          <source src="./images/CHIK1080.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </section>
-    <h1>Kарта</h1>
-    <section class="process-map">
-      <aside class="process-sidebar">
-        <div class="process-card active" data-step="0">
-          <h2>Эскизы</h2>
-          <p>
-            Первые наброски <br />и концепции пространства. <br /><br />Эскизы
-            помогли определить общую атмосферу,расположение зон и визуальный
-            стиль вечеринки.
+      <section class="map-hero">
+        <div>
+          <h2 class="map-hero-subtitle">Исследуй пространство<br />вечеринки</h2>
+          <p class="text">
+            Несколько тематических сцен, интерактивные зоны, магазины мерча и
+            специальные лаунж-зоны. Интерактивная карта поможет спланировать маршрут.
           </p>
+          <img class="map-bird bird-click" src="./images/bird-3d.webp" alt="" width="467" height="900" loading="lazy" decoding="async" />
         </div>
 
-        <div class="process-card" data-step="1">
-          <h2>Карта</h2>
-          <p>
-            Основные площадки, музыкальные зоны<br />
-            и места для отдыха.
+        <div class="card video-card">
+          <video autoplay muted loop playsinline controls preload="metadata" poster="./images/chik-map-poster.webp" aria-label="Видео пространства вечеринки">
+            <source src="./images/chik-map.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <section class="process" aria-label="Как создавалось пространство">
+        <div class="process-steps">
+          <button class="process-step-btn active" type="button" data-step="plan">
+            <h3>Эскизы</h3>
+            <p>Первые наброски и концепции пространства. Эскизы помогли определить атмосферу, расположение зон и визуальный стиль вечеринки.</p>
+          </button>
+          <button class="process-step-btn" type="button" data-step="map">
+            <h3>Карта</h3>
+            <p>Основные площадки, музыкальные зоны и места для отдыха.</p>
+          </button>
+          <button class="process-step-btn" type="button" data-step="scenes">
+            <h3>Сцены</h3>
+            <p>Тематические сцены и световые инсталляции, где выступают артисты.</p>
+          </button>
+          <button class="process-step-btn" type="button" data-step="secret">
+            <h3>Секретные уголки и навигация</h3>
+            <p>Скрытые локации, навигация и необычные маршруты.</p>
+          </button>
+        </div>
+
+        <div class="process-content">
+          <div class="process-part" id="plan">
+            <h2 class="visually-hidden">Эскизы</h2>
+            <div class="photos">
+              <button type="button" data-lightbox="plan" data-src="./images/map-1.webp">
+                <img src="./images/map-1.webp" alt="Эскиз 1" width="371" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button class="wide" type="button" data-lightbox="plan" data-src="./images/map-2.webp">
+                <img src="./images/map-2.webp" alt="Эскиз 2" width="594" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="plan" data-src="./images/map-3.webp">
+                <img src="./images/map-3.webp" alt="Эскиз 3" width="371" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button class="wide" type="button" data-lightbox="plan" data-src="./images/map-4.webp">
+                <img src="./images/map-4.webp" alt="Эскиз 4" width="594" height="487" loading="lazy" decoding="async" />
+              </button>
+            </div>
+          </div>
+          <div class="process-part" id="map">
+            <h2 class="visually-hidden">Карта</h2>
+            <div class="photos">
+              <button class="full" type="button" data-lightbox="map" data-src="./images/map-5.webp">
+                <img src="./images/map-5.webp" alt="Карта вечеринки 1" width="985" height="603" loading="lazy" decoding="async" />
+              </button>
+            </div>
+          </div>
+          <div class="process-part" id="scenes">
+            <h2 class="visually-hidden">Сцены</h2>
+            <div class="photos">
+              <button type="button" data-lightbox="scenes" data-src="./images/map-6.webp">
+                <img src="./images/map-6.webp" alt="Сцена 1" width="371" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button class="wide" type="button" data-lightbox="scenes" data-src="./images/map-7.webp">
+                <img src="./images/map-7.webp" alt="Сцена 2" width="594" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="scenes" data-src="./images/map-8.webp">
+                <img src="./images/map-8.webp" alt="Сцена 3" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="scenes" data-src="./images/map-9.webp">
+                <img src="./images/map-9.webp" alt="Сцена 4" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="scenes" data-src="./images/map-10.webp">
+                <img src="./images/map-10.webp" alt="Сцена 5" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="scenes" data-src="./images/map-11.webp">
+                <img src="./images/map-11.webp" alt="Сцена 6" width="371" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button class="wide" type="button" data-lightbox="scenes" data-src="./images/map-12.webp">
+                <img src="./images/map-12.webp" alt="Сцена 7" width="594" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="scenes" data-src="./images/map-13.webp">
+                <img src="./images/map-13.webp" alt="Сцена 8" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="scenes" data-src="./images/map-14.webp">
+                <img src="./images/map-14.webp" alt="Сцена 9" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="scenes" data-src="./images/map-15.webp">
+                <img src="./images/map-15.webp" alt="Сцена 10" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+            </div>
+          </div>
+          <div class="process-part" id="secret">
+            <h2 class="visually-hidden">Секретные уголки и навигация</h2>
+            <div class="photos">
+              <button class="full" type="button" data-lightbox="secret" data-src="./images/map-16.webp">
+                <img src="./images/map-16.webp" alt="Секретный уголок 1" width="985" height="603" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="secret" data-src="./images/map-17.webp">
+                <img src="./images/map-17.webp" alt="Секретный уголок 2" width="371" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button class="wide" type="button" data-lightbox="secret" data-src="./images/map-18.webp">
+                <img src="./images/map-18.webp" alt="Секретный уголок 3" width="594" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="secret" data-src="./images/map-19.webp">
+                <img src="./images/map-19.webp" alt="Секретный уголок 4" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="secret" data-src="./images/map-20.webp">
+                <img src="./images/map-20.webp" alt="Секретный уголок 5" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+              <button type="button" data-lightbox="secret" data-src="./images/map-21.webp">
+                <img src="./images/map-21.webp" alt="Секретный уголок 6" width="315" height="487" loading="lazy" decoding="async" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="next-pages" aria-label="Другие страницы">
+        <a class="card next-card" href="program.html">
+          <h2 class="next-card-title">Программа</h2>
+        </a>
+
+        <a class="card next-card" href="line-up.html">
+          <h2 class="next-card-title">Лайн-ап</h2>
+        </a>
+
+        <a class="card next-card next-card-wide" href="about-party.html">
+          <h2 class="next-card-title">О вечеринке</h2>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-hero">
+          <h2 class="subtitle">Не улетай<br />без билета</h2>
+          <p class="text">
+            Chik Party — ночь, где птицы поют, танцуют, слушают друг друга и
+            становятся частью большой музыкальной стаи.
           </p>
+          <button class="btn btn-lime" type="button" data-open="ticket">Купить билет</button>
         </div>
 
-        <div class="process-card" data-step="2">
-          <h2>Сцены</h2>
-          <p>Основные площадки, музыкальные зоны <br />и места для отдыха.</p>
-        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Событие</h3>
+            <a href="about-party.html">О вечеринке</a>
+            <a href="program.html">Программа</a>
+            <a href="line-up.html">Лайн-ап</a>
+            <a href="map.html">Сцены и карта</a>
+          </div>
 
-        <div class="process-card" data-step="3">
-          <h2>Секретные уголки</h2>
-          <p>Скрытые локации, навигация и необычные маршруты.</p>
-        </div>
-      </aside>
+          <div class="footer-column">
+            <h3>Платформа</h3>
+            <a href="platform.html">О Chik</a>
+            <a href="kids.html">Chik Kids</a>
+            <a href="merch.html">Мерч</a>
+          </div>
 
-      <div class="process-content">
-        <div class="process-step plan-step">
-          <img class="map-img-small" src="./images/map-1.png" alt="" />
-          <img class="map-img-wide" src="./images/map-2.png" alt="" />
-          <img class="map-img-small" src="./images/map-3.png" alt="" />
-          <img class="map-img-wide" src="./images/map-4.png" alt="" />
-        </div>
-
-        <div class="process-step map-step">
-          <img class="full" src="./images/map-5.png" alt="" />
-        </div>
-
-        <div class="process-step scenes-step">
-          <img class="small" src="./images/map-6.png" alt="" />
-          <img class="wide" src="./images/map-7.png" alt="" />
-          <img class="small" src="./images/map-8.png" alt="" />
-          <img class="small" src="./images/map-9.png" alt="" />
-          <img class="small" src="./images/map-10.png" alt="" />
-          <img class="small" src="./images/map-11.png" alt="" />
-          <img class="wide" src="./images/map-12.png" alt="" />
-          <img class="small" src="./images/map-13.png" alt="" />
-          <img class="small" src="./images/map-14.png" alt="" />
-          <img class="small" src="./images/map-15.png" alt="" />
-        </div>
-
-        <div class="process-step secret-step">
-          <img class="full" src="./images/map-16.png" alt="" />
-          <img class="small" src="./images/map-17.png" alt="" />
-          <img class="wide" src="./images/map-18.png" alt="" />
-          <img class="small" src="./images/map-19.png" alt="" />
-          <img class="small" src="./images/map-20.png" alt="" />
-          <img class="small" src="./images/map-21.png" alt="" />
+          <div class="footer-column">
+            <h3>Связь</h3>
+            <a href="mailto:hello@chik.party">hello@chik.party</a>
+            <span>@chikparty</span>
+          </div>
         </div>
       </div>
-    </section>
-    <section class="navigation-cards">
-      <a href="map.html" class="nav-card small">
-        <h2 class="nav-card-title">О вечеринке</h2>
-      </a>
 
-      <a href="programm.html" class="nav-card small">
-        <h2 class="nav-card-title">Программа</h2>
-      </a>
-
-      <a href="line-up.html" class="nav-card large">
-        <h2 class="nav-card-title">Лайн-ап</h2>
-      </a>
-    </section>
-  </body>
-  <footer class="footer">
-    <div class="footer-main">
-      <div class="footer-hero">
-        <h2>Не улетай <br />без билета</h2>
-
-        <p>
-          Chik Party — ночь, где птицы поют, танцуют, слушают друг друга и
-          становятся частью большой музыкальной стаи.
-        </p>
-
-        <a class="footer-button open-ticket-modal"> Купить билет </a>
+      <div class="footer-bottom">
+        <span>© 2026 Chik Party. Все права расправлены.</span>
+        <span>Манукян Карина, б25дз10</span>
       </div>
+    </footer>
 
-      <div class="footer-links">
-        <div class="footer-column">
-          <h3>Событие</h3>
-          <a href="about-party.html">О вечеринке</a>
-          <a href="programm.html">Программа</a>
-          <a href="line-up.html">Лайн-ап</a>
-          <a href="map.html">Сцены и карта</a>
-        </div>
+    <div class="modal" id="ticket" role="dialog" aria-modal="true" aria-labelledby="ticket-title" hidden>
+      <div class="modal-box">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
 
-        <div class="footer-column">
-          <h3>Платформа</h3>
-          <a href="#">О Chik</a>
-          <a href="#">Для артистов</a>
-          <a href="#">Для слушателей</a>
-          <a href="CHIK-KIDS.html">Chik Kids</a>
-        </div>
+        <h2 class="modal-title" id="ticket-title">Купить билет</h2>
+        <p class="modal-text modal-text-start">Оставь заявку, и мы пришлём билет на почту.</p>
 
-        <div class="footer-column">
-          <h3>Связь</h3>
-          <a href="mailto:hello@chik.party">hello@chik.party</a>
-          <a href="#">@chikparty</a>
-        </div>
-      </div>
-    </div>
+        <form class="form ticket-form" novalidate>
+          <div class="field">
+            <label for="ticket-name">Имя</label>
+            <input id="ticket-name" type="text" name="name" autocomplete="name" placeholder="Как тебя зовут" required />
+            <span class="field-error">Напиши, как тебя зовут</span>
+          </div>
 
-    <div class="footer-bottom">Chik Party. Все права расправлены.</div>
-    <div class="ticket-modal">
-      <div class="ticket-modal-content">
-        <button class="ticket-modal-close">✕</button>
+          <div class="field">
+            <label for="ticket-email">E-mail</label>
+            <input id="ticket-email" type="email" name="email" autocomplete="email" placeholder="bird@chik.party" required />
+            <span class="field-error">Проверь, что почта написана правильно</span>
+          </div>
 
-        <h2>Купить билет</h2>
+          <div class="field">
+            <label for="ticket-phone">Телефон</label>
+            <input id="ticket-phone" type="tel" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required />
+            <span class="field-error">Нужен номер из 11 цифр</span>
+          </div>
 
-        <form class="ticket-form">
-          <input type="text" placeholder="Ваше имя" required />
+          <div class="field">
+            <label for="ticket-type">Билет</label>
+            <select id="ticket-type" name="ticket" required>
+              <option value="">Выбери билет</option>
+              <option value="Стандарт">Стандарт</option>
+              <option value="ВИПчик">ВИПчик</option>
+              <option value="Бэкстейж">Бэкстейж</option>
+            </select>
+            <span class="field-error">Выбери билет</span>
+          </div>
 
-          <input type="email" placeholder="E-mail" required />
-
-          <input type="tel" placeholder="Телефон" required />
-
-          <select required>
-            <option value="">Выберите билет</option>
-            <option>Стандарт</option>
-            <option>ВИПчик</option>
-            <option>Бэкстейж</option>
-          </select>
-
-          <button type="submit" class="ticket-form-btn">Отправить</button>
+          <button class="btn btn-lime" type="submit">Отправить заявку</button>
         </form>
+
+        <div class="success" aria-live="polite">
+          <img src="./images/icon-bird.svg" alt="" width="163" height="129" />
+          <h2 class="modal-title">Чирик!</h2>
+          <p class="modal-text success-text"></p>
+          <button class="btn" type="button" data-close>Отлично</button>
+        </div>
       </div>
     </div>
-  </footer>
+
+    <div class="modal" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+      <div class="modal-box">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
+
+        <h2 class="modal-title" id="cart-title">Корзина</h2>
+
+        <div class="modal-text-start">
+          <p class="cart-empty">Пока пусто. Загляни в <a class="accent" href="merch.html">мерч</a>.</p>
+          <ul class="cart-list"></ul>
+          <div class="cart-total" hidden>
+            <span>Итого</span>
+            <span class="cart-sum">0 ₽</span>
+          </div>
+          <button class="btn btn-lime cart-order" type="button" hidden>Оформить заказ</button>
+        </div>
+
+        <div class="success" aria-live="polite">
+          <img src="./images/icon-bird.svg" alt="" width="163" height="129" />
+          <h2 class="modal-title">Заказ оформлен</h2>
+          <p class="modal-text">Забери его на стойке мерча в день вечеринки.</p>
+          <button class="btn" type="button" data-close>Хорошо</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр картинки" hidden>
+      <div class="modal-box">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
+        <button class="btn btn-round btn-ghost lightbox-arrow lightbox-prev" type="button" aria-label="Предыдущая">←</button>
+        <img class="lightbox-image" src="./images/favicon.png" alt="" />
+        <button class="btn btn-round btn-ghost lightbox-arrow lightbox-next" type="button" aria-label="Следующая">→</button>
+      </div>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
 </html>

@@ -1,322 +1,172 @@
-/* HEADER */
+/* ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ */
+/* класс reveal ставит скрипт, без него всё видно сразу */
 
-.menu a,
-.ticket-btn,
-.logo {
-  transition: 0.25s ease;
+.reveal {
+  opacity: 0;
+  translate: 0 4vw;
+  transition: opacity 0.7s ease-out, translate 0.7s ease-out;
 }
 
-.menu a:hover {
-  color: #6552d0;
+.reveal.shown {
+  opacity: 1;
+  translate: 0 0;
 }
 
-.ticket-btn:hover {
-  background: #7355ee;
-  border-color: #9b82ff;
-  transform: translateY(-0.1vw);
-}
-
-.ticket-btn:active {
-  transform: translateY(0);
-}
-
-.logo:hover {
-  transform: rotate(-2deg) scale(1.04);
-}
-
-.logo:active {
-  transform: scale(0.98);
-}
-
-/* TICKETS */
-
-.ticket-card,
-.ticket-title,
-.ticket-badge,
-.ticket-button {
-  transition: 0.3s ease;
-}
-
-.ticket-card:hover {
-  transform: translateY(-0.3vw);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 1vw 3vw rgba(103, 72, 219, 0.25);
-}
-
-.ticket-card:hover .ticket-title {
-  transform: translateX(0.5vw);
-}
-
-.ticket-badge:hover {
-  transform: scale(1.08);
-}
-
-.ticket-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 1.5vw rgba(223, 255, 79, 0.4);
-}
-
-.ticket-button:active {
-  transform: scale(0.95);
-}
-
-/* FAQ */
-
-.faq-item {
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.faq-item:hover {
-  transform: translateY(-0.2vw);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0.8vw 2vw rgba(103, 72, 219, 0.2);
-}
-
-.faq-icon {
-  transition: transform 0.3s ease;
-}
-
-.faq-item[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  animation: fadeIn 0.3s ease;
-}
-
-/* BIRDS */
-
-.bird-left {
-  animation: float-left 4s ease-in-out infinite;
-}
-
-.bird-right {
-  animation: float-right 4s ease-in-out infinite 2s;
-}
-
-/* LINE-UP */
-
-.artist-card {
-  transition: transform 0.3s ease;
-}
-
-.artist-card:hover {
-  transform: translateY(-0.5vw);
-}
-
-/* NAVIGATION CARDS */
-
-.nav-card {
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
-
-.nav-card-title {
-  transition: transform 0.35s ease;
-}
-
-.nav-card:hover {
-  transform: translateY(-0.4vw);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 1vw 3vw rgba(103, 72, 219, 0.25);
-}
-
-.nav-card:hover .nav-card-title {
-  transform: scale(2);
-  transform-origin: top left;
-}
-
-/* PARTY PAGE */
+/* БЕГУЩАЯ СТРОКА */
 
 .marquee-track {
-  animation: marquee 14s linear infinite;
+  animation: marquee 18s linear infinite;
 }
 
-.party-card {
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
-
-.party-card h2 {
-  transition: transform 0.35s ease;
-}
-
-.party-card:hover {
-  transform: translateY(-0.4vw);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 1vw 3vw rgba(103, 72, 219, 0.25);
-}
-
-.party-card:hover h2 {
-  transform: scale(1.4);
-  transform-origin: top left;
-}
-
-/* KEYFRAMES */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-0.5vw);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float-left {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-25deg);
-  }
-
-  50% {
-    transform: translateY(-1vw) rotate(-20deg);
-  }
-}
-
-@keyframes float-right {
-  0%,
-  100% {
-    transform: translateY(0) rotate(25deg);
-  }
-
-  50% {
-    transform: translateY(-1vw) rotate(20deg);
-  }
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }
 }
 
-@keyframes float-bird {
+/* ГЛАВНАЯ */
+
+.hero-logo {
+  animation: logo-in 1s ease-out both;
+}
+
+@keyframes logo-in {
+  from {
+    opacity: 0;
+    transform: translateY(3vw) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* птички в манифесте покачиваются */
+.manifest-bird {
+  animation: bird-sway 2.4s ease-in-out infinite;
+}
+
+.manifest-bird-right {
+  animation-name: bird-sway-right;
+  animation-delay: 1.2s;
+}
+
+@keyframes bird-sway {
   0%,
   100% {
-    transform: translateY(0) rotate(-2deg);
+    rotate: 0deg;
   }
-
   50% {
-    transform: translateY(-1vw) rotate(2deg);
+    rotate: -8deg;
   }
 }
-@keyframes hover-bird {
-  from {
-    transform: translateY(0) scale(1.03) rotate(-3deg);
-  }
 
-  to {
-    transform: translateY(-0.8vw) scale(1.08) rotate(3deg);
+@keyframes bird-sway-right {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 8deg;
   }
 }
-.burger-toggle {
-  display: none;
+
+/* птичка на странице о вечеринке парит */
+.about-bird {
+  animation: float 4s ease-in-out infinite;
 }
 
-.burger {
-  display: none;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2vw);
+  }
 }
 
-@media (max-width: 440px) {
-  .header {
-    justify-content: space-between;
-    height: 16vw;
+/* ЛАЙН-АП */
+/* при наведении фото раздваивается на салатовую и фиолетовую копии */
+
+.artist:hover img {
+  animation: glitch 0.35s steps(2) 2;
+}
+
+@keyframes glitch {
+  0% {
+    filter: drop-shadow(0.6vw 0 0 var(--lime)) drop-shadow(-0.6vw 0 0 var(--purple));
   }
-
-  .logo {
-    position: absolute;
-    left: 50%;
-
-    transform: translateX(-50%);
+  50% {
+    filter: drop-shadow(-0.5vw 0.2vw 0 var(--lime)) drop-shadow(0.5vw -0.2vw 0 var(--purple));
   }
-
-  .logo img {
-    width: 22vw;
+  100% {
+    filter: none;
   }
+}
 
-  .burger {
-    position: relative;
-    z-index: 1002;
+/* НОТКИ ПРИ КЛИКЕ НА ПТИЦ */
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.4vw;
+.fly-note {
+  position: fixed;
+  z-index: 1700;
 
-    width: 8vw;
-    height: 8vw;
+  width: clamp(1.2rem, 1.8vw, 2rem);
+  height: auto;
 
-    cursor: pointer;
+  pointer-events: none;
+  translate: -50% -50%;
+  animation: fly-note 1.2s ease-out forwards;
+}
+
+@keyframes fly-note {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.4) rotate(0deg);
   }
-
-  .burger span {
-    width: 100%;
-    height: 0.6vw;
-
-    background: #dfff4f;
-    border-radius: 999vw;
-
-    transition: 0.3s;
-  }
-
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1001;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5vw;
-
-    width: 100%;
-    height: 100vh;
-
-    background: rgba(5, 5, 5, 0.96);
-    backdrop-filter: blur(1vw);
-
-    transform: translateX(-100%);
-    transition: transform 0.5s ease;
-  }
-
-  .menu a {
-    font-size: 7vw;
-    padding-left: 8vw;
-  }
-
-  /* открытие меню */
-
-  .burger-toggle:checked ~ .menu {
-    transform: translateX(0);
-  }
-
-  /* анимация бургера в крестик */
-
-  .burger-toggle:checked + .burger span:nth-child(1) {
-    transform: rotate(45deg) translate(1vw, 1vw);
-  }
-
-  .burger-toggle:checked + .burger span:nth-child(2) {
+  100% {
     opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(1.1) rotate(var(--r));
+  }
+}
+
+/* птичка в сообщении об успешной заявке */
+.modal.done .success img {
+  animation: success-bird 0.6s ease-out;
+}
+
+@keyframes success-bird {
+  0% {
+    transform: scale(0.4) rotate(-20deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(6deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* ЕСЛИ АНИМАЦИИ ВЫКЛЮЧЕНЫ В СИСТЕМЕ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 
-  .burger-toggle:checked + .burger span:nth-child(3) {
-    transform: rotate(-45deg) translate(1vw, -1vw);
+  .reveal {
+    opacity: 1;
+    translate: none;
   }
 }
