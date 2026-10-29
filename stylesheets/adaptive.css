@@ -387,11 +387,18 @@
 
   .zine-info .text {
     max-width: none;
-    margin-bottom: 3vw;
+  }
+
+  .zine-content {
+    gap: 5vw;
+  }
+
+  .zine-info .text {
+    margin-bottom: 4vw;
   }
 
   .gallery img {
-    height: 40vw;
+    width: 42vw;
   }
 
   /* программа */
@@ -794,8 +801,12 @@
     gap: 4vw;
   }
 
-  .zine > div {
+  .zine-content {
     display: contents;
+  }
+
+  .zine-cover {
+    aspect-ratio: auto;
   }
 
   .zine-info {
@@ -808,7 +819,7 @@
   }
 
   .gallery img {
-    height: 70vw;
+    width: 70vw;
   }
 
   /* программа: сетка вместо карусели */

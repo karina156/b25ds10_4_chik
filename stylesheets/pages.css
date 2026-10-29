@@ -356,8 +356,8 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: 14vw 1fr;
-  gap: 2vw;
+  grid-template-columns: 27vw 1fr;
+  gap: 4vw;
 }
 
 .zine::before {
@@ -379,34 +379,41 @@
   );
 }
 
+/* высокая обложка слева на всю высоту блока */
 .zine-cover {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-small);
+  aspect-ratio: 393 / 884;
+  object-fit: cover;
 }
 
-.zine-info {
-  margin-bottom: 2.4vw;
+/* справа сверху текст, снизу развороты */
+.zine-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4vw;
+  min-width: 0;
 }
 
 .zine-title {
-  margin-bottom: 1vw;
+  margin-bottom: 1.4vw;
 
   color: var(--lime);
-  font-size: var(--text-h3);
+  font-size: clamp(1.4rem, 2.5vw, 3rem);
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .zine-info .text {
   max-width: 26vw;
-  margin-bottom: 2vw;
+  margin-bottom: 4.4vw;
 }
 
 /* развороты листаются вбок */
 .gallery {
   display: flex;
-  gap: var(--gap);
+  gap: 2.6vw;
 
   margin-right: calc(var(--page) * -1);
   padding-right: var(--page);
@@ -423,9 +430,10 @@
 }
 
 .gallery img {
-  width: auto;
-  height: 24vw;
-  border-radius: var(--radius-small);
+  width: 33vw;
+  height: auto;
+  aspect-ratio: 480 / 522;
+  object-fit: cover;
 
   transition: transform 0.3s;
 }
