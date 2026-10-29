@@ -356,8 +356,12 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: 27vw 1fr;
+  grid-template-columns: auto 1fr;
   gap: 4vw;
+
+  /* весь блок помещается в экран под шапкой */
+  height: calc(100vh - var(--header-height) - 4vw);
+  min-height: 34vw;
 }
 
 .zine::before {
@@ -381,10 +385,11 @@
 
 /* высокая обложка слева на всю высоту блока */
 .zine-cover {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   aspect-ratio: 393 / 884;
   object-fit: cover;
+  border-radius: var(--radius-small);
 }
 
 /* справа сверху текст, снизу развороты */
@@ -392,8 +397,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 4vw;
+  gap: 3vw;
   min-width: 0;
+  min-height: 0;
 }
 
 .zine-title {
@@ -407,11 +413,14 @@
 
 .zine-info .text {
   max-width: 26vw;
-  margin-bottom: 4.4vw;
+  margin-bottom: 2.4vw;
 }
 
 /* развороты листаются вбок */
 .gallery {
+  flex: 1;
+  min-height: 0;
+
   display: flex;
   gap: 2.6vw;
 
@@ -426,14 +435,16 @@
 
 .gallery button {
   flex: 0 0 auto;
+  height: 100%;
   scroll-snap-align: start;
 }
 
 .gallery img {
-  width: 33vw;
-  height: auto;
+  width: auto;
+  height: 100%;
   aspect-ratio: 480 / 522;
   object-fit: cover;
+  border-radius: var(--radius-small);
 
   transition: transform 0.3s;
 }

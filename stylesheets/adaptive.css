@@ -389,6 +389,26 @@
     max-width: none;
   }
 
+  /* на планшете и телефоне блок по высоте содержимого */
+  .zine {
+    grid-template-columns: 22vw 1fr;
+    height: auto;
+    min-height: 0;
+  }
+
+  .zine-cover {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery button {
+    height: auto;
+  }
+
+  .gallery img {
+    height: auto;
+  }
+
   .zine-content {
     gap: 5vw;
   }
