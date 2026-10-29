@@ -213,6 +213,11 @@ section {
   transform: scale(1.08);
 }
 
+.btn:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 /* HEADER */
 
 .header {

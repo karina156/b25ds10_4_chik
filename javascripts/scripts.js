@@ -501,7 +501,6 @@ function programCarousel() {
   const name = document.querySelector('.program-now .program-name')
   const time = document.querySelector('.program-now .program-time')
   const bar = document.querySelector('.program-progress span')
-  const half = Math.floor(posters.length / 2)
   let current = -1
 
   section.style.setProperty('--posters', posters.length)
@@ -511,10 +510,8 @@ function programCarousel() {
     current = index
 
     posters.forEach((poster, i) => {
-      // насколько афиша далеко от центральной, по кругу
-      let offset = i - current
-      if (offset > half) offset -= posters.length
-      if (offset < -half) offset += posters.length
+      // насколько афиша далеко от центральной: слева пройденные, справа следующие
+      const offset = i - current
       const depth = Math.abs(offset)
 
       poster.style.setProperty('--offset', offset)
@@ -535,6 +532,9 @@ function programCarousel() {
   // сколько можно прокрутить внутри секции
   const scrollLength = () => section.offsetHeight - window.innerHeight
 
+  const prev = document.querySelector('.program-prev')
+  const next = document.querySelector('.program-next')
+
   // какая афиша соответствует прокрутке
   const onScroll = () => {
     if (!isCarousel()) return
@@ -544,11 +544,15 @@ function programCarousel() {
 
     bar.style.width = progress * 100 + '%'
     place(Math.round(progress * (posters.length - 1)))
+
+    prev.disabled = current === 0
+    next.disabled = current === posters.length - 1
   }
 
   // стрелки и клики тоже листают через прокрутку, чтобы всё совпадало
   const goTo = (index) => {
-    index = (index + posters.length) % posters.length
+    // дальше первой и последней афиши не листаем
+    index = Math.min(Math.max(index, 0), posters.length - 1)
 
     if (!isCarousel()) {
       place(index)
@@ -571,8 +575,8 @@ function programCarousel() {
     })
   })
 
-  document.querySelector('.program-prev').addEventListener('click', () => goTo(current - 1))
-  document.querySelector('.program-next').addEventListener('click', () => goTo(current + 1))
+  prev.addEventListener('click', () => goTo(current - 1))
+  next.addEventListener('click', () => goTo(current + 1))
 
   stage.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') goTo(current - 1)
