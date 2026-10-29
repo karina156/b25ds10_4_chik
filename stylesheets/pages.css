@@ -413,18 +413,32 @@
 
 /* ПРОГРАММА: карусель афиш */
 
+/* секция высокая, а афиши прилипают к экрану и листаются, пока ее прокручиваешь */
 .program {
-  position: relative;
-  overflow: hidden;
+  --posters: 6;
 
-  margin: 0 calc(var(--page) * -1) var(--section);
-  padding: 4vw 0 2vw;
+  position: relative;
+  height: calc(100vh + (var(--posters) - 1) * 40vh);
+  margin: calc(var(--header-height) * -1 - 3vw) calc(var(--page) * -1) var(--section);
 }
 
-.program::before {
+.program-sticky {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+  padding-top: var(--header-height);
+}
+
+.program-sticky::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
   z-index: -1;
 
@@ -432,12 +446,35 @@
   height: 50vw;
 
   background: radial-gradient(closest-side, rgba(101, 82, 208, 0.9) 0%, transparent 65%);
+  transform: translate(-50%, -50%);
+}
+
+/* полоска прогресса снизу */
+.program-progress {
+  position: absolute;
+  bottom: 3vw;
+  left: 50%;
+
+  width: 16vw;
+  height: max(2px, 0.2vw);
+
+  background: var(--line);
+  border-radius: 999vw;
   transform: translateX(-50%);
+}
+
+.program-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+
+  background: var(--lime);
+  border-radius: inherit;
 }
 
 .program-title {
   position: absolute;
-  top: 12vw;
+  top: calc(50% - 6vw);
   left: 0;
   right: 0;
 

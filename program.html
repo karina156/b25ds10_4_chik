@@ -57,36 +57,40 @@
 
     <main id="main">
       <section class="program" aria-label="Афиши программы">
-        <h1 class="title program-title">Программа</h1>
+        <div class="program-sticky">
+          <h1 class="title program-title">Программа</h1>
 
-        <div class="program-stage">
-          <button class="poster" type="button" data-name="Ночь свиста" data-time="00:00" data-src="./images/program-1.webp">
-            <img src="./images/program-1.webp" alt="Афиша «Ночь свиста»" width="595" height="842" />
-          </button>
-          <button class="poster" type="button" data-name="Грязный звук" data-time="19:00" data-src="./images/program-2.webp">
-            <img src="./images/program-2.webp" alt="Афиша «Грязный звук»" width="595" height="842" />
-          </button>
-          <button class="poster" type="button" data-name="Птичий батл" data-time="22:00" data-src="./images/program-3.webp">
-            <img src="./images/program-3.webp" alt="Афиша «Птичий батл»" width="595" height="842" />
-          </button>
-          <button class="poster" type="button" data-name="Мега птичий концерт" data-time="19:00" data-src="./images/program-4.webp">
-            <img src="./images/program-4.webp" alt="Афиша «Мега птичий концерт»" width="595" height="842" />
-          </button>
-          <button class="poster" type="button" data-name="Фестиваль полётов" data-time="19:00" data-src="./images/program-5.webp">
-            <img src="./images/program-5.webp" alt="Афиша «Фестиваль полётов»" width="595" height="842" />
-          </button>
-          <button class="poster" type="button" data-name="Утренний концерт" data-time="06:00" data-src="./images/program-6.webp">
-            <img src="./images/program-6.webp" alt="Афиша «Утренний концерт»" width="592" height="837" />
-          </button>
-        </div>
-
-        <div class="program-info">
-          <button class="btn btn-round btn-ghost program-prev" type="button" aria-label="Предыдущая афиша">←</button>
-          <div class="program-now" aria-live="polite">
-            <p class="program-name"></p>
-            <p class="program-time"></p>
+          <div class="program-stage">
+            <button class="poster" type="button" data-name="Ночь свиста" data-time="00:00" data-src="./images/program-1.webp">
+              <img src="./images/program-1.webp" alt="Афиша «Ночь свиста»" width="595" height="842" />
+            </button>
+            <button class="poster" type="button" data-name="Грязный звук" data-time="19:00" data-src="./images/program-2.webp">
+              <img src="./images/program-2.webp" alt="Афиша «Грязный звук»" width="595" height="842" />
+            </button>
+            <button class="poster" type="button" data-name="Птичий батл" data-time="22:00" data-src="./images/program-3.webp">
+              <img src="./images/program-3.webp" alt="Афиша «Птичий батл»" width="595" height="842" />
+            </button>
+            <button class="poster" type="button" data-name="Мега птичий концерт" data-time="19:00" data-src="./images/program-4.webp">
+              <img src="./images/program-4.webp" alt="Афиша «Мега птичий концерт»" width="595" height="842" />
+            </button>
+            <button class="poster" type="button" data-name="Фестиваль полётов" data-time="19:00" data-src="./images/program-5.webp">
+              <img src="./images/program-5.webp" alt="Афиша «Фестиваль полётов»" width="595" height="842" />
+            </button>
+            <button class="poster" type="button" data-name="Утренний концерт" data-time="06:00" data-src="./images/program-6.webp">
+              <img src="./images/program-6.webp" alt="Афиша «Утренний концерт»" width="592" height="837" />
+            </button>
           </div>
-          <button class="btn btn-round btn-ghost program-next" type="button" aria-label="Следующая афиша">→</button>
+
+          <div class="program-info">
+            <button class="btn btn-round btn-ghost program-prev" type="button" aria-label="Предыдущая афиша">←</button>
+            <div class="program-now" aria-live="polite">
+              <p class="program-name"></p>
+              <p class="program-time"></p>
+            </div>
+            <button class="btn btn-round btn-ghost program-next" type="button" aria-label="Следующая афиша">→</button>
+          </div>
+
+          <div class="program-progress" aria-hidden="true"><span></span></div>
         </div>
       </section>
 

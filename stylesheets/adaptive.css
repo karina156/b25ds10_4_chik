@@ -391,17 +391,18 @@
 
   /* программа */
 
-  .program {
-    padding-top: 8vw;
-  }
-
-  .program::before {
+  .program-sticky::before {
     width: 110vw;
     height: 80vw;
   }
 
   .program-title {
-    top: 18vw;
+    top: calc(50% - 12vw);
+  }
+
+  .program-progress {
+    width: 30vw;
+    height: max(2px, 0.4vw);
   }
 
   .program-stage {
@@ -814,14 +815,21 @@
 
   /* от карусели остается только заголовок */
   .program {
-    overflow: visible;
+    height: auto;
     margin: 0 0 5vw;
+  }
+
+  .program-sticky {
+    position: static;
+    overflow: visible;
+    height: auto;
     padding: 0;
   }
 
-  .program::before,
+  .program-sticky::before,
   .program-stage,
-  .program-info {
+  .program-info,
+  .program-progress {
     display: none;
   }
 

@@ -491,18 +491,25 @@ function processMap() {
 /* ПРОГРАММА: КАРУСЕЛЬ АФИШ */
 
 function programCarousel() {
+  const section = document.querySelector('.program')
   const stage = document.querySelector('.program-stage')
 
-  if (!stage) return
+  if (!section || !stage) return
 
   const posters = [...stage.querySelectorAll('.poster')]
   const gridButtons = document.querySelectorAll('.program-grid button')
   const name = document.querySelector('.program-now .program-name')
   const time = document.querySelector('.program-now .program-time')
+  const bar = document.querySelector('.program-progress span')
   const half = Math.floor(posters.length / 2)
-  let current = 0
+  let current = -1
 
-  const place = () => {
+  section.style.setProperty('--posters', posters.length)
+
+  const place = (index) => {
+    if (index === current) return
+    current = index
+
     posters.forEach((poster, i) => {
       // насколько афиша далеко от центральной, по кругу
       let offset = i - current
@@ -522,9 +529,35 @@ function programCarousel() {
     time.textContent = posters[current].dataset.time
   }
 
-  const move = (step) => {
-    current = (current + step + posters.length) % posters.length
-    place()
+  // карусель видна только на больших экранах, на телефоне там сетка
+  const isCarousel = () => stage.offsetParent !== null
+
+  // сколько можно прокрутить внутри секции
+  const scrollLength = () => section.offsetHeight - window.innerHeight
+
+  // какая афиша соответствует прокрутке
+  const onScroll = () => {
+    if (!isCarousel()) return
+
+    const top = section.getBoundingClientRect().top
+    const progress = Math.min(Math.max(-top / scrollLength(), 0), 1)
+
+    bar.style.width = progress * 100 + '%'
+    place(Math.round(progress * (posters.length - 1)))
+  }
+
+  // стрелки и клики тоже листают через прокрутку, чтобы всё совпадало
+  const goTo = (index) => {
+    index = (index + posters.length) % posters.length
+
+    if (!isCarousel()) {
+      place(index)
+      return
+    }
+
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY
+    const y = sectionTop + (scrollLength() * index) / (posters.length - 1)
+    window.scrollTo({ top: y, behavior: noMotion ? 'auto' : 'smooth' })
   }
 
   posters.forEach((poster, i) => {
@@ -533,21 +566,20 @@ function programCarousel() {
         // центральную афишу открываем крупно
         gridButtons[i].click()
       } else {
-        current = i
-        place()
+        goTo(i)
       }
     })
   })
 
-  document.querySelector('.program-prev').addEventListener('click', () => move(-1))
-  document.querySelector('.program-next').addEventListener('click', () => move(1))
+  document.querySelector('.program-prev').addEventListener('click', () => goTo(current - 1))
+  document.querySelector('.program-next').addEventListener('click', () => goTo(current + 1))
 
   stage.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') move(-1)
-    if (e.key === 'ArrowRight') move(1)
+    if (e.key === 'ArrowLeft') goTo(current - 1)
+    if (e.key === 'ArrowRight') goTo(current + 1)
   })
 
-  // листание пальцем
+  // листание пальцем на планшете
   let startX = null
 
   stage.addEventListener('pointerdown', (e) => {
@@ -557,11 +589,15 @@ function programCarousel() {
   stage.addEventListener('pointerup', (e) => {
     if (startX === null) return
     const diff = e.clientX - startX
-    if (Math.abs(diff) > 40) move(diff < 0 ? 1 : -1)
+    if (Math.abs(diff) > 40) goTo(diff < 0 ? current + 1 : current - 1)
     startX = null
   })
 
-  place()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', onScroll)
+
+  place(0)
+  onScroll()
 }
 
 /* ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ */
