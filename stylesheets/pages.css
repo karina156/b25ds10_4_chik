@@ -22,7 +22,13 @@
   width: 60vw;
   height: 60vw;
 
-  background: radial-gradient(closest-side, rgba(101, 82, 208, 0.75) 0%, transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(103, 72, 219, 0.8) 0%,
+    rgba(103, 72, 219, 0.4) 30%,
+    rgba(103, 72, 219, 0.15) 50%,
+    transparent 60%
+  );
   transform: translateX(-50%);
 }
 
@@ -69,7 +75,7 @@
   min-height: 12.5vw;
   padding: 2.6vw 3.4vw;
 
-  background: radial-gradient(circle at 0% 50%, var(--purple) 0%, var(--black) 75%);
+  background: radial-gradient(circle at center, #5c46ce 10%, #080808 100%);
   border: var(--line-width) solid var(--line);
   border-radius: var(--radius);
   text-align: left;
@@ -209,7 +215,12 @@
 }
 
 .faq-item {
-  background: linear-gradient(to right, var(--purple) 0%, var(--dark) 45%);
+  background: radial-gradient(
+    circle at 25% center,
+    #6748db 0%,
+    #1b143d 35%,
+    #0b0b0b 70%
+  );
   border: var(--line-width) solid var(--line);
   border-radius: var(--radius);
 
@@ -312,7 +323,13 @@
   width: 40vw;
   height: 40vw;
 
-  background: radial-gradient(closest-side, rgba(101, 82, 208, 0.45) 0%, transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(103, 72, 219, 0.8) 0%,
+    rgba(103, 72, 219, 0.4) 30%,
+    rgba(103, 72, 219, 0.15) 50%,
+    transparent 60%
+  );
 }
 
 .about-intro .title {
@@ -353,7 +370,13 @@
   width: 50vw;
   height: 50vw;
 
-  background: radial-gradient(closest-side, rgba(101, 82, 208, 0.55) 0%, transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(103, 72, 219, 0.8) 0%,
+    rgba(103, 72, 219, 0.4) 30%,
+    rgba(103, 72, 219, 0.15) 50%,
+    transparent 60%
+  );
 }
 
 .zine-cover {
@@ -433,20 +456,13 @@
 
   height: 100vh;
   padding-top: var(--header-height);
-}
 
-.program-sticky::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-
-  width: 70vw;
-  height: 50vw;
-
-  background: radial-gradient(closest-side, rgba(101, 82, 208, 0.9) 0%, transparent 65%);
-  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle at center,
+    rgba(103, 72, 219, 0.75) 0%,
+    rgba(103, 72, 219, 0.25) 35%,
+    #050505 55%
+  );
 }
 
 /* полоска прогресса снизу */
@@ -586,7 +602,7 @@
   content: '';
   position: absolute;
   inset: 45% 0 0;
-  background: linear-gradient(to top, var(--purple), transparent);
+  background: linear-gradient(to top, rgba(103, 72, 219, 0.95), transparent);
 }
 
 .artist-name {
@@ -664,7 +680,13 @@
   width: 60vw;
   height: 40vw;
 
-  background: radial-gradient(closest-side, rgba(101, 82, 208, 0.6) 0%, transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(103, 72, 219, 0.8) 0%,
+    rgba(103, 72, 219, 0.4) 30%,
+    rgba(103, 72, 219, 0.15) 50%,
+    transparent 60%
+  );
 }
 
 .map-hero-subtitle {
@@ -713,7 +735,7 @@
   width: 100%;
   padding: 1.2vw 1.4vw;
 
-  background: linear-gradient(to top, var(--purple) 0%, var(--dark) 80%);
+  background: linear-gradient(to top, #6748db 0%, #050505 55%);
   border: var(--line-width) solid var(--line);
   border-radius: var(--radius-small);
   text-align: left;
@@ -929,7 +951,13 @@
   width: 60vw;
   height: 50vw;
 
-  background: radial-gradient(closest-side, rgba(101, 82, 208, 0.6) 0%, transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(103, 72, 219, 0.8) 0%,
+    rgba(103, 72, 219, 0.4) 30%,
+    rgba(103, 72, 219, 0.15) 50%,
+    transparent 60%
+  );
 }
 
 .poster-head .title {
